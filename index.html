@@ -26,8 +26,8 @@
 
 	/* First image (Logo. Full height) */
 	.bgimg-1 {
-	    background-color: #008F95;
-	    min-height: 25%;
+	    background-color: lightskyblue;
+	    min-height: 30%;
 	}
 
 	/* Second image (Portfolio) */
@@ -49,8 +49,9 @@
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT ME</a>
+	<a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cubes"></i> PROJECTS</a>
 	<a href="#datatools" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-wrench"></i> DATA & TOOLS</a>
     <a href="#publications" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-book"></i> PUBLICATIONS</a>
   </div>
@@ -58,6 +59,7 @@
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT ME</a>
+	<a href="#projects" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJECTS</a>
 	<a href="#datatools" class="w3-bar-item w3-button" onclick="toggleFunction()">DATA & TOOLS</a>
     <a href="#publications" class="w3-bar-item w3-button" onclick="toggleFunction()">PUBLICATIONS</a>
   </div>
@@ -99,13 +101,145 @@
 <!-- Second Image with Portfolio Text -->
 <div class="bgimg-2 w3-opacity-min"></div>
 
-<!-- Container (Publications Section) -->
+<!-- Container (PROJECTS Section) -->
+<div class="w3-content w3-container w3-padding-64 w3-center" id="projects">
+  <h3 class="w3-center">PROJECTS</h3>
+
+  <div class="w3-row">
+	  <!-- DP Harmonization of WF -->
+	  <div class="w3-col l4 m4 w3-center w3-padding-small">
+		  <div class="w3-card-4 w3-margin-small">
+			  <header class="w3-container w3-yellow">
+				<h5>Harmonization of Lang. Resources for Multiple Languages</h5>
+			  </header>
+			  <div class="w3-container">
+				<p>This is the topic of my Master thesis at UFAL. I will review and
+				   compare existed language resources containing word-formation
+				   across languages. Then, I will design suitable attribute-value
+				   schemas, and I will harmonize data structures and formats of some
+				   of them.</p>
+			  </div>
+		  <div class="w3-btn w3-block w3-black"> <br> </div>
+		  </div>
+	  </div>
+	  	<!-- WF of Czech GAČR -->
+		<div class="w3-col l4 m4 w3-center w3-padding-small">
+			<div class="w3-card-4 w3-margin-small">
+				<header class="w3-container w3-yellow">
+				  <h5>Word-Formation Structure of Czech Words</h5>
+				</header>
+				<div class="w3-container">
+				  <p>I am a part of the team which focuses on linguistic research
+					 into the word-formation structure of Czech words using specialized
+					 language resources and tools and large language corpora. This project
+					 is led by Magda Ševčíková, and it is supported by <em>GAČR</em>.</p>
+				</div>
+			<a class="w3-btn w3-block w3-black" href="http://ufal.mff.cuni.cz/node/1838">Project description</a>
+			</div>
+		</div>
+		<!-- Semnatic labeling -->
+		<div class="w3-col l4 m4 w3-center w3-padding-small">
+			<div class="w3-card-4 w3-margin-small">
+				<header class="w3-container w3-yellow">
+				  <h5>Semantic Labeling of Word-Formation Relations</h5>
+				</header>
+				<div class="w3-container">
+				  <p>In this new ongoing project, I carry out first experiments with
+					 semantic labelling of derivational relations in DeriNet using machine
+					 learning methods. Supported by <em>Student's Faculty Grant at MFF CUNI</em>.
+				  	 <br><br><br></p>
+				</div>
+			<a class="w3-btn w3-block w3-black" href="https://github.com/vidraj/derinet/tree/master/data/annotations/cs/2018_09_ssjc_semantic">GitHub repository</a>
+			</div>
+		</div>
+    </div>
+
+	<div class="w3-row">
+		<!-- DeriNet -->
+	    <div class="w3-col l4 m4 w3-center w3-padding-small">
+	  	  <div class="w3-card-4 w3-margin-small">
+	  		  <header class="w3-container w3-yellow">
+	  			<h5>DeriNet</h5>
+	  		  </header>
+	  		  <div class="w3-container">
+	  			<p>I help to develop a lexical network of derivational
+					relations between Czech words. I focus on expanding
+					the number of relations using other existed language resources, prepare
+					data for manual annotations and do first experiments with semantic
+					labelling in DeriNet.</p>
+	  		  </div>
+	  	  <a class="w3-btn w3-block w3-black" href="http://ufal.mff.cuni.cz/derinet">Project webpage</a>
+	  	  </div>
+	    </div>
+		<!-- WiktiWF -->
+		<div class="w3-col l4 m4 w3-center w3-padding-small">
+			<div class="w3-card-4 w3-margin-small">
+				<header class="w3-container w3-yellow">
+				  <h5>WiktiWF</h5>
+				</header>
+				<div class="w3-container">
+				  <p>WiktiWF is my still ongoing project with an ambition to extract
+					 and provide data for word-formation of 25 languages (in the same
+					 format, structure and license) from open data of Wiktionary.org.
+					 So far, five datasets (Czech, English, German, French and Polish)
+					 were published.</p>
+				</div>
+			<a class="w3-btn w3-block w3-black" href="https://github.com/lukyjanek/wiktionary-wf">GitHub repository</a>
+			</div>
+		</div>
+		<!-- FW Recognition -->
+		<div class="w3-col l4 m4 w3-center w3-padding-small">
+			<div class="w3-card-4 w3-margin-small">
+				<header class="w3-container w3-yellow">
+				  <h5>Foreign Words Recognition</h5>
+				</header>
+				<div class="w3-container">
+				  <p>I develope a rule-based tool for the recognition
+					 of borrowed foreign words in the Czech language. Used rules are
+					 based on the study of so far published linguistic papers. In this
+					 project I was supported by <em>Student's Faculty Grant at MFF CUNI</em>.</p>
+				</div>
+			<a class="w3-btn w3-block w3-black" href="https://github.com/lukyjanek/foreign-words-recognition">GitHub repository</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-row">
+		<!-- Empty -->
+		<div class="w3-col l3 m3 w3-center w3-padding-small">
+		</div>
+		<!-- FW Recognition -->
+		<div class="w3-col l6 m6 w3-center w3-padding-small">
+			<div class="w3-card-4 w3-margin-small">
+				<header class="w3-container w3-yellow">
+				  <h5>Mutual Intelligibility of West-Slavic Languages</h5>
+				</header>
+				<div class="w3-container">
+				  <p>With my colleague Jiří Haviger, we focus on a quantitative
+					 measuring of mutual intelligibility on graphemic and phonetic
+					 layers between West-Slavic languages, especially using conditional
+					 entropy. Thanks to that, among other things, I created scripts for
+					 phonetic transcription (will be published soon) of mentioned
+					 languages.</p>
+				</div>
+			<div class="w3-btn w3-block w3-black"> <br> </div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- Second Image with Portfolio Text -->
+<div class="bgimg-2 w3-opacity-min"></div>
+
+<!-- Container (DATA AND TOOLS Section) -->
 <div class="w3-content w3-container w3-padding-64" id="datatools">
   <h3 class="w3-center">DATA &amp; TOOLS</h3>
 
   	<!-- DATA -->
   	<h5>I am an author or co-author of these <strong>datasets</strong>:</h5>
 
+	<!-- DeriNet -->
 	<ul class="w3-ul w3-border">
     	<li class="w3-blue w3-large">DeriNet [<a href="http://ufal.mff.cuni.cz/derinet">project webpage</a>]</li>
 		<li>
@@ -136,7 +270,7 @@
 <!-- Second Image with Portfolio Text -->
 <div class="bgimg-2 w3-opacity-min"></div>
 
-<!-- Container (Publications Section) -->
+<!-- Container (PUBLICATIONS Section) -->
 <div class="w3-content w3-container w3-padding-64" id="publications">
   <h3 class="w3-center">PUBLICATIONS</h3>
 

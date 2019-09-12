@@ -16,7 +16,6 @@
 	body, h1, h2, h3, h4, h5, h6 {font-family: "Lato", sans-serif;}
 	th {font-size: x-large; color: orange;}
 
-	bib {color: blue; font-weight: bold;}
 	.pdf {color: blue; font-weight: bold; text-decoration: none;}
 
 	body, html {
@@ -26,15 +25,12 @@
 
 	/* First image (Logo. Full height) */
 	.bgimg-1 {
-	    background-color: lightskyblue;
 	    min-height: 30%;
-	}
-
-	/* Second image (Portfolio) */
-	.bgimg-2 {
-	    background-color: orange;
-	    min-height: 3%;
-	}
+        background-color: #2a05ff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.38'%3E%3Cpath fill='%23060aff' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%230733ff' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23085cff' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%230985ff' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%230aadff' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%230ac8ff' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%230ae3ff' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%230afeff' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%230affe5' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%230affca' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+        background-attachment: fixed;
+        background-size: cover;
+        }
 
 	.w3-wide {letter-spacing: 10px;}
 	.w3-hover-opacity {cursor: pointer;}
@@ -66,7 +62,7 @@
 </div>
 
 <!-- First Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+<div class="bgimg-1 w3-display-container" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <span class="w3-center w3-padding-large w3-black w3-wide w3-xlarge w3-animate-opacity">L<span class="w3-hide-small">ukáš</span><span class="w3-hide-large w3-hide-medium">.</span> Kyjánek</span>
   </div>
@@ -74,7 +70,7 @@
 
 <!-- ABOUT ME -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
+  <h3 class="w3-center w3-xxxlarge">ABOUT ME</h3>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-small">
 	  <img src="images/avatar.jpg" class="w3-round w3-image" alt="Photo of Me" width="200">
@@ -98,12 +94,10 @@
 </div>
 
 
-<!-- Second Image with Portfolio Text -->
-<div class="bgimg-2 w3-opacity-min"></div>
 
 <!-- Container (PROJECTS Section) -->
 <div class="w3-content w3-container w3-padding-64 w3-center" id="projects">
-  <h3 class="w3-center">PROJECTS</h3>
+  <h3 class="w3-center w3-xxxlarge">PROJECTS</h3>
 
   <div class="w3-row">
 	  <!-- DP Harmonization of WF -->
@@ -117,7 +111,7 @@
                    language resources that contain word-formation across languages, and
                    I will harmonize them to create a Universal Derivation collection.</p>
 			  </div>
-          <a class="w3-btn w3-block w3-black" href="http://ufal.mff.cuni.cz/universal-derivations">Project description</a>
+          <a class="w3-btn w3-block w3-black" href="http://ufal.mff.cuni.cz/universal-derivations">Project webpage</a>
 		  </div>
 	  </div>
 	  	<!-- WF of Czech GAČR -->
@@ -204,18 +198,26 @@
 
 </div>
 
-<!-- Second Image with Portfolio Text -->
-<div class="bgimg-2 w3-opacity-min"></div>
+
 
 <!-- Container (DATA AND TOOLS Section) -->
 <div class="w3-content w3-container w3-padding-64" id="datatools">
-  <h3 class="w3-center">DATA &amp; TOOLS</h3>
+  <h3 class="w3-center w3-xxxlarge">DATA &amp; TOOLS</h3>
 
   	<!-- DATA -->
-  	<h5>I am an author or co-author of these <strong>datasets</strong>:</h5>
 
-	<!-- DeriNet -->
-	<ul class="w3-ul w3-border">
+    <!-- Universal Derivations -->
+	<ul class="w3-ul w3-card-4">
+        <li class="w3-blue w3-large">Universal Derivations (UDer) [<a href="http://ufal.mff.cuni.cz/universal-derivations">project webpage</a>]</li>
+        <li>
+			KYJÁNEK, Lukáš; ŽABOKRTSKÝ, Zdeněk; VIDRA, Jonáš; ŠEVČÍKOVÁ, Magda. 2019.
+	  		<strong>Universal Derivations 0.5</strong>, LINDAT/CLARIN digital library at the Institute of Formal and Applied Linguistics (ÚFAL),
+			Faculty of Mathematics and Physics, Charles University, <a href="http://hdl.handle.net/11234/1-3041">http://hdl.handle.net/11234/1-3041</a>.
+		</li>
+    </ul>
+
+	<br> <!-- DeriNet -->
+	<ul class="w3-ul w3-card-4">
         <li class="w3-blue w3-large">DeriNet [<a href="http://ufal.mff.cuni.cz/derinet">project webpage</a>]</li>
         <li>
 			VIDRA, Jonáš; ŽABOKRTSKÝ, Zdeněk; KYJÁNEK, Lukáš; ŠEVČÍKOVÁ, Magda; DOHNALOVÁ, Šárka. 2019.
@@ -234,11 +236,10 @@
 		</li>
 	</ul>
 
-	<br><br><!-- TOOLS -->
-	<h5>I am an author or co-author of these <strong>tools</strong>:</h5>
-
+    <br><br><!-- TOOLS -->
+    
     <!-- Phonetic transcription -->
-	<ul class="w3-ul w3-border">
+	<ul class="w3-ul w3-card-4">
     	<li class="w3-green w3-large">Phonetic transcription [<a href="https://github.com/lukyjanek/phonetic-transcription">GitHub repository</a>]</li>
     	<li>
              KYJÁNEK, Lukáš. 2019. <strong>Scripts for an Automatic Phonetic Transcription of the Czech, Slovak and Polish Languages (v1)</strong>,
@@ -247,7 +248,7 @@
     </ul>
 
     <br> <!-- Foreign words -->
-	<ul class="w3-ul w3-border">
+	<ul class="w3-ul w3-card-4">
     	<li class="w3-green w3-large">Foreign Words Recognition [<a href="https://github.com/lukyjanek/foreign-words-recognition">GitHub repository</a>]</li>
     	<li>
 			 KYJÁNEK, Lukáš. 2018. <strong>Tool for a Recognition of Foreign Words in the Czech Language (v1)</strong>,
@@ -257,39 +258,40 @@
 
 </div>
 
-<!-- Second Image with Portfolio Text -->
-<div class="bgimg-2 w3-opacity-min"></div>
+
 
 <!-- Container (PUBLICATIONS Section) -->
 <div class="w3-content w3-container w3-padding-64" id="publications">
-  <h3 class="w3-center">PUBLICATIONS</h3>
+  <h3 class="w3-center w3-xxxlarge">PUBLICATIONS</h3>
 
-    <!-- 2019 -->
-	<ul class="w3-ul w3-border">
-        <li class="w3-red w3-large">2019</li>
+	<ul class="w3-ul w3-card-4">
+        <!-- 2019 -->
+        <li class="w3-orange w3-large">2019</li>
+        <li>
+            KYJÁNEK, Lukáš; ŽABOKRTSKÝ, Zdeněk; ŠEVČÍKOVÁ, Magda; VIDRA, Jonáš. 2019. <strong>Universal Derivations Kickoff: A Collection of Harmonized Derivational Resources for Eleven Languages</strong>. In <em>Proceedings of the 2nd Workshop on Resources and Tools for Derivational Morphology</em>. Prague: Charles University, pp.&nbsp;101-110. ISBN:&nbsp;978-80-88132-08-0. URL:&nbsp;<a href="https://ufal.mff.cuni.cz/derimo2019/pdf-files/derimo2019.pdf">https://ufal.mff.cuni.cz/derimo2019/pdf-files/derimo2019.pdf</a>.
+            [<a class="pdf" href="publications/derimo-uder.pdf">.pdf</a>]
+        </li>
+        <li>
+            VIDRA, Jonáš; ŽABOKRTSKÝ, Zdeněk; ŠEVČÍKOVÁ, Magda; KYJÁNEK, Lukáš. 2019. <strong>DeriNet 2.0: Towards an All-in-One Word-Formation Resource</strong>. In <em>Proceedings of the 2nd Workshop on Resources and Tools for Derivational Morphology</em>. Prague: Charles University, pp.&nbsp;81-89. ISBN:&nbsp;978-80-88132-08-0. URL:&nbsp;<a href="https://ufal.mff.cuni.cz/derimo2019/pdf-files/derimo2019.pdf">https://ufal.mff.cuni.cz/derimo2019/pdf-files/derimo2019.pdf</a>.
+            [<a class="pdf" href="publications/derimo-derinet.pdf">.pdf</a>]
+        </li>
         <li>
             KYJÁNEK, Lukáš; HAVIGER, Jiří. 2019. <strong>The Measurement of Mutual Intelligibility between West-Slavic Languages.</strong> <em>Journal of Quantitative Linguistics</em>, 26(3), 205-230. DOI:&nbsp;<a href="http://dx.doi.org/10.1080/09296174.2018.1464546">10.1080/09296174.2018.1464546</a>.
             [<a class="pdf" href="publications/AM-measurement-mutual-intelligibility-west-slavic.pdf">.pdf</a>]
         </li>
+        <!-- 2018 -->
+        <li class="w3-orange w3-large">2018</li>
+        <li>
+            KYJÁNEK, Lukáš. 2018. <strong>Morphological Resources of Derivational Word-Formation Relations</strong>. Technical Report TR-2018-61. Prague: Institute of Formal and Applied Linguistics, Faculty of Mathematics and Physics, Charles University. ISSN:&nbsp;1214-5521. URL:&nbsp;<a href="http://ufal.mff.cuni.cz/techrep/tr61.pdf">http://ufal.mff.cuni.cz/techrep/tr61.pdf</a>.
+            [<a class="pdf" href="publications/techrep-dermorpho.pdf">.pdf</a>]
+        </li>
+        <!-- 2017 -->
+        <li class="w3-orange w3-large">2017</li>
+        <li>
+            KYJÁNEK, Lukáš. 2017. <strong>Semikomunikace v konceptu komunikace</strong>. Bachelor Thesis. Hradec Králové: Faculty of Science, University of Hradec Králové. Supervisor: Jana BÍLKOVÁ. Consultant: Jiří HAVIGER.
+            [<a class="pdf" href="publications/bachelor-thesis.pdf">.pdf</a>]
+        </li>
     </ul>
-
-	<br> <!-- 2018 -->
-	<ul class="w3-ul w3-border">
-	  <li class="w3-red w3-large">2018</li>
-	  <li>
-		  KYJÁNEK, Lukáš. 2018. <strong>Morphological Resources of Derivational Word-Formation Relations</strong>. Technical Report TR-2018-61. Prague. Charles University. Faculty of Mathematics and Physics. Institute of Formal and Applied Linguistics. ISSN:&nbsp;1214-5521. URL:&nbsp;<a href="http://ufal.mff.cuni.cz/techrep/tr61.pdf">http://ufal.mff.cuni.cz/techrep/tr61.pdf</a>.
-		  [<a class="pdf" href="publications/techrep-dermorpho.pdf">.pdf</a>]
-	  </li>
-	</ul>
-
-	<br> <!-- 2017 -->
-	<ul class="w3-ul w3-border">
-	  <li class="w3-red w3-large">2017</li>
-	  <li>
-		  KYJÁNEK, Lukáš. 2017. <strong>Semikomunikace v konceptu komunikace</strong>. Bachelor Thesis. Hradec Králové. University of Hradec Králové. Faculty of Science. Supervisor: Jana BÍLKOVÁ. Consultant: Jiří HAVIGER.
-		  [<a class="pdf" href="publications/bachelor-thesis.pdf">.pdf</a>]
-	  </li>
-	</ul>
 
 </div>
 

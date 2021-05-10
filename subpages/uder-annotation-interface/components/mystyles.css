@@ -24,6 +24,13 @@ h1 {
     bottom: 0px;
 }
 
+.head {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    /* bottom: 0px; */
+}
+
 .button {
     background-color: #4CAF50;
     border: none;
@@ -35,21 +42,20 @@ h1 {
     font-size: 1em;
     margin: 2px 2px;
     cursor: pointer;
+    border-radius: 12px;
 }
 
 .btn-blue {background-color: #008CBA;}
 .btn-red {background-color: #f44336;}
+.btn-black {background-color: black; float: left; margin: 8px 8px 0px 8px}
 
 input[type="file"] {
     display: none;
 }
 
 input[type="text"] {
-    font-size: 1em;
-    margin: 2px 2px;
-    padding: 15px 15px;
+    padding: 2px 2px;
     text-align: center;
-    width: 80px;
 }
 
 .custom-file-upload {
@@ -63,7 +69,11 @@ input[type="text"] {
     font-size: 1em;
     margin: 2px 2px;
     cursor: pointer;
+    border-radius: 12px;
 }
+
+.cfu-color {background-color: #f2eb1b;}
+
 
 /* source: https://www.w3schools.com/howto/howto_css_modals.asp */
 .modal {
@@ -81,7 +91,7 @@ input[type="text"] {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;

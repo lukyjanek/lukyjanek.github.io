@@ -103,9 +103,8 @@
                                 <li>L. Kyjánek v úterý 13:10-14:40 učebna N8</li>
                                 <li>je podmínkou zapsat si v souvislém tříhodinovém bloku s cvičením z <a target="_blank" href="https://is.cuni.cz/studium/predmety/index.php?do=predmet&kod=NPRG062">Algoritmizace</a>, které vede kolega Martin Liška [<a target="_blank" href="https://github.com/marxin/MFF/tree/main/2122/alg">zde</a>]</li>
                             </ul>
-                            <li>Vzdálený přístup do MFF sítě</li>
-                            <center><code>ssh [cas_jmeno]@u-pl[1-25].ms.mff.cuni.cz</code></center>
                         </ul>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -245,6 +244,50 @@
                         Dr. Martin Mareš vede cvičení z <a target="_blank" href="http://mj.ucw.cz/vyuka/2122/p1x/">Algoritmizace a Programování 1 pro pokročilé</a>. Lze si zapsat, nebo navštěvovat čistě ze zájmu. Koná se ve čtvrtek.
                     </center>
                     <br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="w3-row w3-padding-small">
+        <!-- Obsah -->
+        <div class="w3-card-4">
+            <div class="w3-card-4">
+                <header class="w3-container w3-indigo w3-center">
+                    <h5>Linuxový terminál pro Windows <strong>&</strong> Vzdálený přístup do MFF sítě</h5>
+                </header>
+                <div class="w3-container">
+                    <ul>
+                        <li>Linuxový terminál</li>
+                        <ul>
+                            <li>zpřístupní Linuxový terminál přímo v systému Windows 10</li>
+                            <li>návod na instalaci viz [<a target="_blank" href="https://ubunlog.com/cs/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/?utm_source=feedburner&utm_medium=%24%7Bfeed%2C+email%7D&utm_campaign=Feed%3A+%24%7BUbunlog%7D+%28%24%7BUbunlog%7D%29">zde</a>]</li>
+                        </ul>
+                        
+                        <li>vzdáleně: pro přístup do sítě (čtení, zápis, spouštění souborů): <code>ssh</code></li>
+                        <ul>
+                            <li>na Unix a MacOS předinstalované v terminálu, do Windows terminálu potřeba doinstalovat (viz návod [<a target="_blank" href="https://www.newsinit.cz/ssh-ve-windows-10-bez-pouziti-bash/">zde</a>])</li>
+                            <li>v příkazové řádce se pak přihlašujete pomocí příkazu: <code>ssh [cas_jmeno]@u-pl[1-25].ms.mff.cuni.cz</code></li>
+                            <li>uvedené číslo pracovní stanice [1-25] můžete zvolit libovolně</li>
+                            <li>na MFF počítačích je Unix, takže pozor na příkazy (např. <code>dir</code> vs. <code>ls</code>)</li>
+                        </ul>
+
+                        <li>vzdáleně: pro stahování souborů do vlastního počítače: <code>sftp</code></li>
+                        <ul>
+                            <li>na Unix a MacOS předinstalované v terminálu, do Windows terminálu potřeba doinstalovat stejně jako <code>ssh</code> (viz návod [<a target="_blank" href="https://www.newsinit.cz/ssh-ve-windows-10-bez-pouziti-bash/">zde</a>])</li>
+                            <li>v příkazové řádce se pak přihlašujete pomocí příkazu: <code>sftp [cas_jmeno]@u-pl[1-25].ms.mff.cuni.cz</code></li>
+                            <li><code>sftp</code> vás přihlásí podobně jako <code>ssh</code>, ale hlavním účelem je, abyste našli na vzdáleném počítači požadovaný soubor a stáhli si ho do svého počítače, k čemuž slouží příkazy <code>put</code> a <code>get</code></li>
+                            <ul>
+                                <li><code>put [umístění_souboru_v_lokalním_pc] [cílové_umístění_na_vzdáleném_pc]</code> slouží k nahrání souboru z lokálního počítače na vzdálený počítač</li>
+                                <li><code>get [umístění_souboru_na_vzdaleném_pc] [cílové_umístění_na_lokálním_pc]</code> slouží ke stažení souboru ze vzdáleného počítače do lokálního počítače</li>
+                                <li>(umístění v lokálním počítači se bere z adresáře, ze kterého se volal příkaz <code>sftp</code>; pro umístění římo do adresáře, že kterého se příkaz volal stačí místo cesty zadat tečku)</li>
+                            </ul>
+                        </ul>
+
+                        <li>kromě terminálového přístupu existují (minimálně pro Windows také grafické klienty, např. PuTTy [<a targe="_blank" href="https://www.putty.org/">zde</a>] nebo WinSCP [<a targe="_blank" href="https://winscp.net/eng/docs/lang:cs">zde</a>]</li>
+                        
+                    </ul>
                 </div>
             </div>
         </div>

@@ -299,6 +299,35 @@
 
 <!-- Container (Cvičení) -->
 <!--
+<div class="w3-content w3-container w3-padding-12" id="6">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">6. cvičení</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">6. cvičení</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+ 
+        <li>knihovna <code>math</code>: <code>math.ceil()</code>, <code>math.floor()</code>, <code>math.pow()</code>, <code>math.sqrt()</code>, <code>math.exp()</code>, <code>math.log()</code>, <code>math.log2()</code>, <code>math.comb()</code>, <code>math.perm()</code>, <code>math.factorial()</code>, <code>math.pi</code></li>
+
+        <li>funkce</li>
+        <li>rekurze: Josefův problém</li>
+    </ul>
+</div>
+-->
+<!-- 
+<div class="w3-content w3-container w3-padding-12" id="5">
+    <h3 class="w3-center w3-xxlarge w3-hide-small">5. cvičení</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">5. cvičení</h3>
+    <hr style="border: 2px solid rgba(255, 166, 0, 0.87)">
+
+    <div class="w3-panel w3-card w3-light-grey w3-center">
+        <h3>Zrušeno</h3>
+        imatrikulace
+    </div>
+</div>
+-->
+
+<!--
 <div class="w3-content w3-container w3-padding-12" id="4">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">4. cvičení</h3>
@@ -306,18 +335,87 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>úlohy: druhý největší a nejmenší, hádání číslic</li>
+        <li><strong>INFO</strong>: (i) Příští cvičení je zrušeno kvůli imatrikulaci. (ii) Přidal jsem informace o vzdáleném přístupu do MFF sítě.</li>
+        <li>knihovna <code>random</code>: <code>random.seed()</code>, <code>random.random()</code>, <code>random.randint()</code>, <code>random.shuffle()</code>, <code>random.choice()</code>, <code>random.choices()</code>, <code>random.sample()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka metod z knihovny <code>random</code>.</h6>
+            <div class="w3-code">
+              import random<br>
+              random.seed(123)<br>
+              print(random.random())<br>
+              print(random.randint(2, 6))<br><br>
+
+              pismena = ['a', 'b', 'c', 'd']<br>
+              random.shuffle(pismena)<br>
+              print(pismena)<br><br>
+
+              print(random.choice(pismena))<br>
+              print(random.choices(pismena, k=2))  # s opakováním<br>
+              print(random.sample(pismena, k=2))  # bez opakování<br>
+            </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vytvořte program, který si náhodně vygeneruje číslo od 0 do 10 a uživatel bude toto číslo hádat, tzn. program se bude uživatele ptát na číslo tak dlouho, dokud jej uživatel neuhodne. Na konci programu (po tom, co uživatel uhodne), vypíše program správné číslo a počet pokusů, který uživatel potřeboval k uhodnutí.</h6>
+        </div>
+
         <li>datová struktura <code>set()</code>: <code>set.add()</code>, <code>set.pop()</code>, <code>set.remove()</code>, <code>set.union()</code>, <code>set.issubset()</code>, <code>set.isdisjoint()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Jak bude množina vypadat po aplikovaná následujících metod? Co jednotlivé metody dělají?</h6>
+            <div class="w3-code">
+                mnozina = set()<br>
+                mnozina.add(5)<br>
+                mnozina.add(3)<br>
+                mnozina.add(5)<br>
+                mnozina.add(7)<br>
+                mnozina.pop()
+                mnozina.add(6)<br>
+                mnozina.remove(7)<br>
+                mnozina = mnozina.union({5,8,9})<br>
+                print(mnozina)<br>
+              </div>
+        </div>
 
-        <li>cyklus <code>for</code> a list comprehension <code>[... for ...]</code></li>
+        <li>cyklus <code>for</code> a list comprehension <code>[... for ...]</code> plus užitečné funkce <code>range()</code>, <code>enumerate()</code>, <code>zip()</code> a příkazy <code>pass</code>, <code>break</code>, <code>continue</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Jak dopadne výstup tohoto cyklu?</h6>
+            <div class="w3-code">
+                dopravni_prostredky = (<br>
+                &nbsp;&nbsp;'auto', 'kolo', 'loď', 'letadlo', 'motorka',<br>
+                &nbsp;&nbsp;'brusle', 'koloběžka', 'surf', 'lanovka', 'kůň'<br>
+                )<br><br>
 
-        <li>knihovna <code>math</code>: <code>math.ceil()</code>, <code>math.floor()</code>, <code>math.pow()</code>, <code>math.sqrt()</code>, <code>math.exp()</code>, <code>math.log()</code>, <code>math.log2()</code>, <code>math.comb()</code>, <code>math.perm()</code>, <code>math.factorial()</code></li>
+                # klasický for cyklus<br>
+                for i in range(0, 5):<br>
+                &nbsp;&nbsp;if dopravni_prostredky[i] == 'letadlo':<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print('To bude rychlost! Použiješ totiž letadlo!')<br>
+                &nbsp;&nbsp;elif i == 4:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;continue<br>
+                &nbsp;&nbsp;elif i == 6:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                &nbsp;&nbsp;else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print('Použiješ {}?'.format(dopravni_prostredky[i]))<br><br>
+                # list comprehension<br>
+                vysledek = [prostredek for i, prostredek in enumerate(dopravni_prostredky) if i % 2 == 0]<br><br>
 
-        <li>knihovna <code>random</code>: <code>random.seed()</code>, <code>random.random()</code>, <code>random.uniform()</code>, <code>random.randint()</code>, <code>random.shuffle()</code>, <code>random.choice()</code>, <code>random.choices()</code>, <code>random.sample()</code>, <code>math.pi</code></li>
+                # metoda zip()<br>
+                vysledek = [<br>
+                &nbsp;&nbsp;prostredek<br>
+                &nbsp;&nbsp;for i, prostredek in zip(range(0, len(dopravni_prostredky)), dopravni_prostredky)<br>
+                &nbsp;&nbsp;if i % 2 == 0<br>
+                ]<br>
+              </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vytvořte program, který náhodně vygeneruje pole celých čísel (např. 10 čísel od od 0 do 100) a najde v něm druhé největší a druhé nejmenší číslo. Na výstupu program vypíše vygenerované pole a nanlezené hodnoty. (Vyhněte se použití metody <code>sort()</code>.)</h6>
+        </div>
+        
 
         <li>úkoly:</li>
         <ul>
-            <li><code>inventura_v_zoo</code>: ...</li>
+            <li><code>inventura_v_zoo</code>: Vytvořte program, který provede inventuru v zoo tak, že odpoví na zadané otázky. Na vstupu dostane vždy číslo otázky a seznam zvířat. Číslo otázky bude od seznamu zvířat oddělené mezerou; jednotlivé zvířata v seznamu budou od sebe oddělená středníkem a jejich jména neobsahují mezery. Otázky lze nalézt v zadání v ReCodExu - jednotlivé testy kontrolují správnost jednotlivých odpovědí na otázky (Test 1 kontroluje odpověď na Otázku 1, Test 2 kontroluje odpověď na Otázku 2 atd.). Body za správně zodpovězené otázky přidělím ručně v závislosti na tom, na kolik otázek odpovíte (každá otázka za 1b).</li>
+            <li><code>obracene_poradi_cifer</code> (2b): Vytvořte program, který na vstupu dostena číslo a program jej vypíše pozpátku.</li>
+            <li><code>dobra_cisla</code> (3b): Přečtěte si definici <em>dobrého čísla</em> (tj. číslo dělitelné beze zbytku každou svou cifrou) a vytvořte program, který bude hledat počet takových čísel v zadaném intervalu.</li>
+            <li><code>kresleni_kere</code> (4b): Vytvořte program, který na vstupu přijme číslo - velikost keře - a vykreslí příslušně veliký keř podle pravidel uvedených v ReCodExu.</li>
         </ul>
     </ul>
 </div>

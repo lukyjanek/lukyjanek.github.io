@@ -298,6 +298,76 @@
 
 
 <!-- Container (Cvičení) -->
+<!--
+<div class="w3-content w3-container w3-padding-12" id="8">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">8. cvičení (16.11.2021)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">8. cvičení (16.11.2021)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>procvičování objektového programování na příkladu spojového seznamu (převzato/inspirováno cvičením od R. Rosy)</li>
+        <ul>
+            <li>úloha: práci se spojovým seznamem si ukážeme na příkladu vlaku složeného ze dvou typů objektů <code>mašina</code> a <code>vagon</code></li>
+            
+            <li>definice objektů:</li>
+            <ul>
+                <li>vlak má jednu mašinu a 0 až N vagonů</li>
+                <li>mašina ví jen co je za ní za vagon (nebo že za ní žádný vagon není)</li>
+                <li>vagon ví, co veze, kolik toho veze, a který vagon je za ním (nebo že za ním žádný vagon není)</li>
+                <li>(vagon by mohl vědět i který vagon je před ním; to by pak byl obousměrný spojový seznam, to si volitelně můžete zkusit taky -- je víc práce ho udržovat, protože se musí opravovat dvakrát tolik odkazů, ale některé operace se s ním dělají o trochu pohodlněji)</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Vytvořte si definice tříd <code>Masina</code> a <code>Vagon</code> podle popisu výše.</h6>
+                <p>U každé třídy stačí když vyrobíte metodu <code>__init__()</code> která nastaví příslušné datové položky (ale pokud chcete, udělejte si i další metody). Níže je nástin.</p>
+                <div class="w3-code">
+                    class Masina:<br>
+                    &nbsp;&nbsp;def __init__(self, vagon_za_mnou=None):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;self.dalsi = vagon_za_mnou<br><br>
+
+                    class Vagon:<br>
+                    &nbsp;&nbsp;def __init__(self, naklad="brambory", mnozstvi=0, za_mnou=None):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                  </div>
+            </div>
+            
+            <li>vytvoření objektů:</li>
+            <ul>
+                <li>vagon může vézt například uhlí, dřevo, papír, krávy, zrní, nebo cokoli jiného</li>
+                <li>množství dané komodity můžete chápat jako číslo bez zřejmého rozměru; pro krávy má asi smysl mluvit o jejich počtu, pro zrní spíš o tunách</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Vyrobte si jeden vlak (<em>Oranžový Expres</em>), který bude mít aspoň 5 vagonků vezoucích různý náklad.</h6>
+                <p>Nepoužívejte žádné listy, v nějaké proměnné si udržujte pouze mašinu, a přes tu pak budete přistupovat k vagonům (můžete samozřejmě použít nějaké dočasné proměnné při vytváření vlaku, ale ty berme skutečně jako dočasné).</p>
+                <div class="w3-code">
+                    masina = Masina()<br>
+                    masina.dalsi = Vagon()<br>
+                    masina.dalsi.dalsi = Vagon('uhlí')<br>
+                    masina.dalsi.dalsi.dalsi = Vagon('koťátka', 3)<br>
+                    ...
+                  </div>
+            </div>
+            <ul>
+                <li>tímto nám vznikl takzvaný seznam "s hlavou", tedy se speciálním prvkem (mašinou), který vždy existuje a odkazuje na první skutečný prvek seznamu (první vagon); seznamy s hlavou jsou výhodné, snadněji se s nimi pracuje, neboť nemusíte tak složitě ošetřovat speciální případy jako přidání prvního vagonu, přidání vagonu na začátek, odebrání prvního vagonu (tedy prvku)</li>
+            </ul>
+
+            <li>vytvoření metod:</li>
+            <ul>
+                https://ufal.mff.cuni.cz/courses/nprg030/20202021#10.11.
+            </ul>
+
+        </ul>
+
+        <li>úkoly</li>
+        <ul>
+            <li><code>...</code> (5b): ...</li>
+            <li><code>...</code> (5b): ...</li>
+        </ul>
+    </ul>
+</div>
+-->
+
+
 <div class="w3-content w3-container w3-padding-12" id="7">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">7. cvičení (09.11.2021)</h3>

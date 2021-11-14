@@ -298,7 +298,7 @@
 
 
 <!-- Container (Cvičení) -->
-<!--
+
 <div class="w3-content w3-container w3-padding-12" id="8">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">8. cvičení (16.11.2021)</h3>
@@ -352,20 +352,33 @@
             </ul>
 
             <li>vytvoření metod:</li>
-            <ul>
-                https://ufal.mff.cuni.cz/courses/nprg030/20202021#10.11.
-            </ul>
+            <ol>
+                <p><em class="w3-small">obecný komentář: pro každý bod níže vytvořte na mašině novou metodu, pokud možno parametrizovatelnou, tj. výchozí hodnota metody <code>pridej_na_zacatek</code> může být přidat vagon vezoucí 30 ptakopysků, ale mělo by být možné pomocí parametrů přidat i vagon vezoucí něco jiného; metoda teoreticky buď vytvořit vagon dle zadání, ale lepší asi je, pokud ta metoda dostane už vytvořený vagon jako parametr, to se vám bude hodit v některých cvičeních (rada: pro přehlednost je vhodné, pokud každá metoda bude vypisovat, co dělá)</em></p>
+                <li>upravte objekty vagónů tak, aby člověk mohl udělat prostě <code>print(vagon)</code> a Python by místo něčeho jako <code>__main__.Vagon object at 0x7fab3d588358</code> vypsal třeba něco jako <code>Vagon vezouci drevo v mnozstvi 30</code>; (toho lze snadno dosáhnout předefinováním metody <code>class.__str__(self)</code> kterou Python používá pro přetypování objektu daného typu na string (takže ta metoda musí vracet string))</li>
+                <li>přidejte metodu, která na začátek vlaku (hned za mašinu) vagon vezoucí 30 ptakopysků</li>
+                <li>přidejte metodu, která na konec vlaku (za poslední vagon) vagon vezoucí 50 bublin</li>
+                <li>přidejte metodu, která vypíše počet vagonů, které mašina veze; součástí ať je též True/False parametr (defaultně False), zda má při průchodu přes vagony mašina vypisovat všechny vezené vagony</li>
+                <li>přidejte metodu, která vypíše všechny vagony, které vezou náklad v množství alespoň 10</li>
+                <li>přidejte metodu, která vypíše celkové množství jednotlivých typů nákladu</li>
+                <li>přidejte metodu, která vypíše vagon s největším množstvím nákladu</li>
+                <li>přidejte metodu, která odebere vagon s největším množstvím nákladu</li>
+                <li>přidejte metodu, která za vagon s největším nákladem připojí nový vagon obsahující 2 policisty</li>
+                <li>přidejte metodu, která za vagon s policisty připojí nový vagon se zlatem</li>
+                <li>přidejte metodu, která najde vagon s požadovanou komoditou a změní její množství</li>
+                <li>přidejte metodu, která najde vagon s uhlím, a pokud existuje - sníží jeho množství na polovinu (spotřebuje se mašinou), a pokud neexistuje - vypíše, že mašina nemá palivo</li>
+                <li>přidejte metodu, která najde vagon s požadovanou komoditou, a pokud existuje - odebere tento vagon, a pokud neexistuje - vypíše, že mašina takový vagon nemá</li>
+            </ol>
 
         </ul>
 
         <li>úkoly</li>
         <ul>
-            <li><code>...</code> (5b): ...</li>
-            <li><code>...</code> (5b): ...</li>
+            <li><code>oranzovy_expres</code> (5b): Modifikujte úlohu vytvořenou v hodině tak, aby plnila požadované úkoly nad spojovým seznamem. Jako výstup program vypíše, jak vypadá celý expres od začátku do konce (ve formátu jako v podúloze 1). Vstupem programu je string se seznam instrukcí uložených v poli (získat datovou strukturu pole lze funkcí <code>eval()</code>), např. <code>"[('pridat_za_masinu', 'koně', 20), ('pridat_za_masinu', 'želvy', 5), ('pridat_na_konec', 'železo', 3), ('odebrat_nejvetsi', None, None), ('pridat_za_nejvetsi', 'policie', 4)]"</code>. Požadované pokyny odpovídají metodám programovaným na cvičení: <code>pridat_za_masinu</code> je 1, <code>pridat_na_konec</code> je 2, <code>odebrat_nejvetsi</code> je 8, <code>pridat_za_nejvetsi</code> je parametrizovaná 9. V případě chybně zadaného pokynu se vypíše <code>ERROR</code> a víc nic. Na konci programu se projde celý vlak a vypíší se podrobnosti jako v podúloze 4 (ovšem bez závěrečného vezených vagonů).</li>
+            <li><code>prunik_poli</code> (3b): Vytvořte program, který na vstupu dostane dvě pole čísel a na výstupu vypíše jejich průnik seřazený od nejmenšího po největší hodnotu. Délky polí se mohou lišit.</li>
         </ul>
     </ul>
 </div>
--->
+
 
 
 <div class="w3-content w3-container w3-padding-12" id="7">

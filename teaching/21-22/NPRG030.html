@@ -299,6 +299,46 @@
 
 <!-- Container (Cvičení) -->
 <!--
+<div class="w3-content w3-container w3-padding-12" id="15">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">15. cvičení (04.01.2021)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">15. cvičení (04.01.2021)</h3>
+    <hr style="border: 2px solid orange">
+
+    <div class="w3-panel w3-card w3-light-grey w3-center">
+        <h3>Zápočtová písemka, 2. pokus</h3>
+    </div>
+</div>
+-->
+
+<!--
+<div class="w3-content w3-container w3-padding-12" id="14">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">14. cvičení (28.12.2021)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">14. cvičení (28.12.2021)</h3>
+    <hr style="border: 2px solid orange">
+
+    <div class="w3-panel w3-card w3-light-grey w3-center">
+        <h3>Zrušeno</h3>
+        vánoční prázdniny
+    </div>
+</div>
+-->
+
+<!--
+<div class="w3-content w3-container w3-padding-12" id="13">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">13. cvičení (21.12.2021)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">13. cvičení (21.12.2021)</h3>
+    <hr style="border: 2px solid orange">
+
+    <div class="w3-panel w3-card w3-light-grey w3-center">
+        <h3>Zápočtová písemka, 1. pokus</h3>
+    </div>
+</div>
+-->
+
+<!--
 <div class="w3-content w3-container w3-padding-12" id="12">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">12. cvičení (14.12.2021)</h3>
@@ -306,10 +346,16 @@
     <hr style="border: 2px solid orange">
 
     <ul>
+        <li>virtuální prostředí</li>
+        <li>instalace knihoven</li>
+        <li>knihovny networkx, request, regex, numpy, pandas, matplotlib/seaborn, sklearn</li>
+        <li>doporučené kurzy: Deep Learning, Machine Learningn for Greenhorns, Technology for NLP or Introduction to Language Technologies</li>
         <li>knihovny Flask, TKinter, PyQt, pygames</li>
     </ul>
 </div>
+-->
 
+<!--
 <div class="w3-content w3-container w3-padding-12" id="11">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">11. cvičení (07.12.2021)</h3>
@@ -317,13 +363,13 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>virtuální prostředí</li>
-        <li>instalace knihoven</li>
-        <li>knihovny networkx, request, regex, numpy, pandas, matplotlib/seaborn, sklearn</li>
-        <li>doporučené kurzy: Deep Learning, Machine Learningn for Greenhorns, Technology for NLP or Introduction to Language Technologies</li>
+        <li>čtení a zápis ze/do souboru</li>
+        <li>knihovny csv, json, pickle, xml</li>
     </ul>
 </div>
+-->
 
+<!--
 <div class="w3-content w3-container w3-padding-12" id="10">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">10. cvičení (30.11.2021)</h3>
@@ -331,12 +377,15 @@
     <hr style="border: 2px solid orange">
 
     <ul>
+        <li>tvorba modulů</li>
+        <li>výjimky try a except</li>
+        <li>testování</li>
         <li>knihovny sys, argparse, os</li>
-        <li>čtení a zápis ze/do souboru</li>
-        <li>knihovny csv, json, pickle, xml</li>
     </ul>
 </div>
+-->
 
+<!--
 <div class="w3-content w3-container w3-padding-12" id="9">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">9. cvičení (23.11.2021)</h3>
@@ -344,10 +393,66 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>tvorba modulů, importy funcí, tříd a balíčků</li>
-        <li>výjimky try a except</li>
-        <li>testování</li>
-        <li>dokumentaace: komentáře a textový soubor</li>
+        <li>pokračování ve cvičení <code>Oranžový expres</code> z minulého cvičení</li>
+
+        <li>importy balíčků, funcí a tříd</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka importu nainstalované knihovny <code>random</code>, vlastní vytvořené třídy <code>Masina</code> a funkce <code>pricti_sedm</code>.</h6>
+            <div class="w3-code">
+                import random<br>
+                import Masina<br>
+                from nazev_souboru import pricti_sedm<br>
+            </div>
+            <p>Import vlastních tříd a funkcí předpokládá, že je soubor s implementovanou třídou v témže adresáři jako spouštěný skript. Pokud není, je potřeba přidat cestu k souboru do <code>sys.path</code>. Lze zadat jak jako relativní, tak absolutní cestu.</p>
+            <div class="w3-code">
+                import sys<br>
+                sys.path.append('cesta_k_souboru_se_tridou_Masina')<br>
+                import Masina<br>
+            </div>
+        </div>
+
+        <li>zadání zápočtového programu; viz "Obecné informace"</li>
+        <li>dokumentace: komentáře a textový soubor; viz "Obecné informace"</li>
+        <ul>
+            <li>kontáře slouží pro snazší čtení kódu jinými programátory, v Pryhonu se dělají pomocí křížků <code>#</code></li>
+            <li>dokumentování kódu slouží nejen pro ostatní programátory, ale také pro uživatele - tyto popisky se zobrazují jako nápovědy k daným třídám, metodám, funkcím; provádí se zpravidla mezi pár třech uvozovek (obvykle dvojitých uvozovek, nikoli jednoduchých)</li>
+        </ul>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka komentování a dokumentování programu.</h6>
+            <div class="w3-code">
+                """Popis toho, co program dělá, k čemu slouží."""<br><br>
+                class Clovek:<br>
+                    &nbsp;&nbsp;"""Popis toho, co dělá daná třída."""<br>
+                    &nbsp;&nbsp;def __init__(self, jmeno):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;self.jmeno = jmeno<br><br>
+                    
+                    &nbsp;&nbsp;def rekni(self, text):<br>
+                    &nbsp;&nbsp;&nbsp;"""Popis toho, co dělá daná metoda."""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;reknu = self.jmeno + ': ' + text<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return reknu<br><br>
+                    
+                    &nbsp;&nbsp;def pozdrav(self):<br>
+                    &nbsp;&nbsp;&nbsp;"""Popis toho, co dělá daná metoda."""<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return self.rekni('Ahoj, jsem ' + self.jmeno)<br><br>
+                
+                
+                def pricti_sedm(cislo, nasobek=1):<br>
+                    &nbsp;&nbsp;"""Popis toho, co dělá daná funkce."""<br>
+                    &nbsp;&nbsp;if cislo % 2 == 0:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return (cislo + 7) * nasobek<br>
+                    &nbsp;&nbsp;return cislo + (7 * nasobek)<br><br>
+                
+                # komentář na začátku řádku<br>
+                # může zabrat i více řádků, ale musí začínat křížkem<br>
+                cislo = 1.78<br>
+                if round(cislo, 0) &lt; cislo:  # komentář na konci řádku<br>
+                &nbsp;&nbsp;print('A')<br>
+                elif round(cislo, 0) &gt; cislo:<br>
+                &nbsp;&nbsp;print('B')<br>
+                else:<br>
+                &nbsp;&nbsp;print('C')<br>
+            </div>
+        </div>
     </ul>
 </div>
 -->

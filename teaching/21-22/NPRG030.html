@@ -416,14 +416,19 @@
             <div class="w3-code">
                 import random<br>
                 import Masina<br>
-                from nazev_souboru import pricti_sedm<br>
+                from nazev_skriptu import pricti_sedm<br>
             </div>
-            <p>Import vlastních tříd a funkcí předpokládá, že je soubor s implementovanou třídou v témže adresáři jako spouštěný skript. Pokud není, je potřeba přidat cestu k souboru do <code>sys.path</code>. Lze zadat jak jako relativní, tak absolutní cestu.</p>
+            <p>Import vlastních tříd a funkcí předpokládá, že je soubor s implementovanou třídou v témže adresáři jako spouštěný skript. Pokud není, je potřeba přidat cestu k souboru do <code>sys.path</code>, a teprve pak importovat. Lze zadat jak jako relativní, tak absolutní cestu.</p>
             <div class="w3-code">
+                # (a) import z adresáře, který je ve stejné složce jako spouštěný skript<br>
+                from nazev_slozky.nazev_skriptu_se_tridou_Masina import Masina<br><br>
+                # (b) import po přidání cesty do sys.paths<br>
                 import sys<br>
-                sys.path.append('cesta_k_souboru_se_tridou_Masina')<br>
-                import Masina<br>
+                sys.path.append('cesta_do_adresare_se_souborem_se_tridou_Masina')<br>
+                from nazev_skriptu_se_tridou_Masina import Masina<br>
             </div>
+            <p>Varianta (a) nelze použít, pokud by byl skript s importovanou třídou <code>Masina</code> v nějakém nadřazeném adresáři (cesta by k němu vedla relativně <code>../</code>). při importu v Pythonu totiž nelze použít <code>from ../.nazev_skriptu_se_tridou_Masina import Masina</code> (ani jinou alternativu); musí se použít varianta (b). Varianta (b) lze použít jak v případě, kdy je skript s importovanou třídou v nadřazeném, tak podřazeném adresáři. Nejprve je však nutné přidat cestu do daného adresáře do <code>sys.path</code> a teprve potom importovat potřebnou třídu.</p>
+            <p><strong>Důležité upozornění</strong> : nazev_skriptu_se_tridou_Masina se zadává bez koncovky <code>.py</code> a smí obsahovat jen písmena, čísla, podtržítka; mezery, spojovníky/pomlčky ani diakritiku při importu Python nezpracuje.</p>
         </div>
 
         <li>zadání zápočtového programu; viz "Obecné informace"</li>

@@ -230,6 +230,7 @@
                 </header>
                 <div class="w3-container">
                     <ul>
+                        <li><strong>online kurz [<a target="_blank" href="https://naucse.python.cz/">NaucSePython</a>]</strong></li>
                         <li>online učebnice [<a target="_blank" href="https://www.sallyx.org/sally/python/python1.php">Sallyx</a>]</li>
                         <li>tahák na Python [<a target="_blank" href="https://learnxinyminutes.com/docs/cs-cz/python/">LearnXinYminutes</a>]</li>
                         <li>učebnice [<a target="_blank" href="http://diveintopython3.py.cz/index.html">DiveIntoPython3</a>]</li>
@@ -368,6 +369,7 @@
     <hr style="border: 2px solid orange">
 
     <ul>
+        <li>knihovny sys, argparse, os</li>
         <li>čtení a zápis ze/do souboru</li>
         <li>knihovny csv, json, pickle, xml</li>
         <li>úkoly</li>
@@ -379,7 +381,7 @@
 </div>
 -->
 
-<!--
+
 <div class="w3-content w3-container w3-padding-12" id="10">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">10. cvičení (30.11.2021)</h3>
@@ -387,18 +389,109 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>tvorba modulů</li>
-        <li>výjimky try a except</li>
+        <li>ošetření chyb, tzv. výjimky: Za zachycení stojí jen ty chyby, u kterých víme, jak chceme, aby program pokračoval. Mnohdy je pro nás výhodnější při chybě program prostě ukončit místo zachycování výjimek.</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka použití <code>try-except</code> k ošetření chyby. Jaká výjimka by se měla zachytit u proměnné <code>c</code>?</h6>
+            <div class="w3-code">
+                try:<br>
+                &nbsp;&nbsp;a = int('pokus')<br>
+                except ValueError:<br>
+                &nbsp;&nbsp;print('Toto není číslo.')<br><br>
+
+                try:<br>
+                &nbsp;&nbsp;b = 7 / 0<br>
+                except ZeroDivisionError:<br>
+                &nbsp;&nbsp;print('Dělíte nulou.')<br><br>
+
+                try:<br>
+                &nbsp;&nbsp;c = len(9)<br>
+                except:<br>
+                &nbsp;&nbsp;print('??')<br><br>
+            </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Rozšířené použití <code>try-except</code> k ošetření chyby a dalšímu běhu programu.</h6>
+            <div class="w3-code">
+                a = 7<br>
+                b = 0<br>
+                try:<br>
+                &nbsp;&nbsp;c = a / b<br>
+                &nbsp;&nbsp;print(c)<br>
+                except ZeroDivisionError:<br>
+                &nbsp;&nbsp;print('Dělí se nulou!')<br>
+                else:<br>
+                &nbsp;&nbsp;print('Tohle se provede, pokud chyba nenastane.')<br>
+                finally:<br>
+                &nbsp;&nbsp;print('Tohle se provede vždycky.')<br>
+            </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vlastní vyvolání výjimky pomocí <code>raise</code> místo <cod€>return</cod>.</h6>
+            <div class="w3-code">
+                def obsah_ctverce(strana):<br>
+                &nbsp;&nbsp;if strana > 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return strana ** 2<br>
+                &nbsp;&nbsp;else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;raise ValueError(f'Strana musí být kladná, číslo {strana} kladné není!')<br>
+            </div>
+        </div>
+
         <li>testování</li>
-        <li>knihovny sys, argparse, os</li>
+        <ul>
+            <li>způsob, jak automaticky ověřit, zda vytvořený program funguje dle požadavků; vytváří se program, který testuje funkci jiného programu</li>
+            <li>automatické testy se mohou zkpouštět opakovaně, např. při úpravě programu dává smysl ověřit si, že úprava programu nezpůsobila problémy ve funkčnosti</li>
+            <li>v Pythonu existuje knihovna <code>unittest</code>, díky níž lze vytvářet testy, ale na ovládání je mnohem snazší knihovna <code>pytest</code>, která se však musí doinstalovat</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <div class="w3-code">
+                    python3 -m pip install pytest<br>
+                </div>
+            </div>
+
+            <li>tvorba testů má své konvence: vytvářené testy by měly mít předponu <code>test_</code>, k vyhodnocení se používá klíčové slovo <code>assert</code>, testy se většinou udržují ve speciálním samostatném souboru</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka jednoduchého testu uloženého v souboru <code>test_secteni.py</code>.</h6>
+                <div class="w3-code">
+                    def secti(a, b):<br>
+                    &nbsp;&nbsp;return a + b<br><br>
+
+                    def test_secti():<br>
+                    &nbsp;&nbsp;assert secti(1, 2) == 3<br>
+                </div>
+                <p>Příkaz <code>assert</code> ve výjimkách funguje v podstatě jako:</p>
+                <div class="w3-code">
+                    if not (a == b):<br>
+                    &nbsp;&nbsp;raise AssertionError('Test selhal!')<br>
+                </div>
+                <p>Test se spouští z příkazového řádku pomocí:</p>
+                <div class="w3-code">
+                    python -m pytest -v test_secteni.py<br>
+                </div>
+                <p>Vytvořený test je tzv. <em>pozitivní test</em>, lze ale vytvořit i <em>negativní testy</em>:</p>
+                <div class="w3-code">
+                    def test_secti2():<br>
+                    &nbsp;&nbsp;assert secti(1, 2) != 4<br>
+                </div>
+                <h6>Rozdělte soubor <code>test_secteni.py</code> na dva soubory tak, aby byly testy a kód programu zvlášť, a přitom šlo kód programu testovat.</h6>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka parametrického testu.</h6>
+                <div class="w3-code">
+                    import pytest<br><br>
+                    @pytest.mark.parametrize(<br>
+                    &nbsp;&nbsp;['a', 'b'], [(10, 1), (11, 2), (12, 3), (13, 4), (14, 5)]<br>
+                    )<br>
+                    def test_secti(a, b):<br>
+                    &nbsp;&nbsp;assert secti(a, b) == a + b<br>
+                </div>
+            </div>
+        </ul>
+
         <li>úkoly</li>
         <ul>
-            <li><code>...</code> (5b): ...</li>
-            <li><code>...</code> (5b): ...</li>
+            <li><code>vyjimky</code> (7b): Vytvořte program, který podle zadání v ReCodExu zachytí požadované výjimky nad zadanou funkcí, kterou taktéž vytvoříte jako součást úlohy.</li>
         </ul>
     </ul>
 </div>
--->
 
 
 <div class="w3-content w3-container w3-padding-12" id="9">

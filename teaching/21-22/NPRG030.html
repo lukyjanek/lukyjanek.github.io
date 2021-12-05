@@ -361,7 +361,7 @@
 </div>
 -->
 
-<!--
+
 <div class="w3-content w3-container w3-padding-12" id="11">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">11. cvičení (07.12.2021)</h3>
@@ -369,9 +369,142 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>knihovny sys, argparse, os</li>
+        <li>knihovna <code>sys</code> [<a href="https://docs.python.org/3/library/sys.html" target="_blank">dokumentace</a>]: <code>sys.exit()</code>, <code>sys.argv</code>, <code>sys.path</code>, <code>sys.stdin</code></li>
+        
+        <li>knihovna <code>argparse</code> [<a href="https://docs.python.org/3/library/argparse.html" target="_blank">dokumentace</a>]</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka použití knihovny <code>argparse</code> k načtení parametrů.</h6>
+            <div class="w3-code">
+                import argparse<br><br>
+                parser = argparse.ArgumentParser()<br><br>
+                parser.add_argument('--input')<br>
+                parser.add_argument('--output', dest='out', help='popisek...')<br>
+                parser.add_argument('--parameter', type=float, help='popisek...')<br>
+                parser.add_argument('--load_google', choices=['Ano', 'Ne'], default='No', help='popisek...')<br>
+                parser.add_argument('--seznam', nargs='+', help='popisek...')<br><br>
+                args = parser.parse_args()<br><br>
+                print(args.input, args.out, args.load_google, args.seznam)<br>
+            </div>
+        </div>
+
+        <li>knihovna <code>os</code> [<a href="https://docs.python.org/3/library/os.html" target="_blank">dokumentace</a>]</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka použití knihovny <code>os</code>. Spojte příkaz s jeho správným komentářem.</h6>
+            <div class="w3-code">
+                import os<br><br>
+                os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí velikost souboru v Bytech<br>
+                os.chdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí seznam adresářů a souborů<br>
+                os.mkdir()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? smaže zadaný soubor<br>
+                os.rmdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vytvoří adresář<br>
+                os.listdir()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí aktuální pracovní adresář<br>
+                os.path.exists('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? změna aktuálního pracovního adresáře<br>
+                os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# ? zjistí, zda adresář/soubor existuje<br>
+                os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? smaže zadaný adresář<br>
+            </div>
+            <!--
+            <div class="w3-code">
+                import os<br><br>
+                os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# vrátí aktuální pracovní adresář<br>
+                os.chdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# změna aktuálního pracovního adresáře<br>
+                os.mkdir()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# vytvoří adresář<br>
+                os.rmdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# smaže zadaný adresář<br>
+                os.listdir()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# vrátí seznam adresářů a souborů<br>
+                os.path.exists('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# zjistí, zda adresář/soubor existuje<br>
+                os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# vrátí velikost souboru v Bytech<br>
+                os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# smaže zadaný soubor<br>
+            </div>
+            -->
+        </div>
+
         <li>čtení a zápis ze/do souboru</li>
-        <li>knihovny csv, json, pickle, xml, gzip</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Jak číst a zapisovat do souboru? Co znamená klíčové slovo <code>with</code>?</h6>
+            <div class="w3-code">
+                TODO: ... https://www.geeksforgeeks.org/with-statement-in-python/
+            </div>
+        </div>
+
+        <li>knihovna <code>csv</code> [<a href="https://docs.python.org/3/library/csv.html" target="_blank">dokumentace</a>]: <code>csv.reader()</code>, <code>csv.writer()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Souborový formát <code>csv</code>/<code>tsv</code>.</h6>
+            <div class="w3-code">
+                # .csv<br>
+                kočka,5,3,2<br>
+                pes,3,2,1<br>
+                želva,5,3,2<br>
+                krkavec,7,5,2<br>
+                myš,3,2,1<br><br>
+                # .tsv<br>
+                kočka&nbsp;&nbsp;5&nbsp;&nbsp;3&nbsp;&nbsp;2<br>
+                pes&nbsp;&nbsp;3&nbsp;&nbsp;2&nbsp;&nbsp;1<br>
+                želva&nbsp;&nbsp;5&nbsp;&nbsp;3&nbsp;&nbsp;2<br>
+                krkavec&nbsp;&nbsp;7&nbsp;&nbsp;5&nbsp;&nbsp;2<br>
+                myš&nbsp;&nbsp;3&nbsp;&nbsp;2&nbsp;&nbsp;1<br><br>
+            </div>
+            <div class="w3-code">
+                import csv<br><br>
+                with open('soubor.csv', mode='r', encoding='U8') as csv_file:<br>
+                &nbsp;&nbsp;obsah_souboru = csv.reader(csv_file, delimiter=',')<br>
+                &nbsp;&nbsp;for radek in obsah_souboru:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;print(' '.join(radek))<br>
+            </div>
+        </div>
+
+        <li>knihovna <code>json</code> [<a href="https://docs.python.org/3/library/json.html" target="_blank">dokumentace</a>]: <code>json.load()</code>, <code>json.loads()</code>, <code>json.dump()</code>, <code>json.dumps()</code> (param. <code>ensure_ascii=False</code>)</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Souborový formát <code>json</code>.</h6>
+            <div class="w3-code">
+                {<br>
+                    &nbsp;&nbsp;'kočka': {'pismena': 5, 'souhlasky': 3, 'samohlasky': 2},<br>
+                    &nbsp;&nbsp;'pes': {'pismena': 3, 'souhlasky': 2, 'samohlasky': 1},<br>
+                    &nbsp;&nbsp;'želva': {'pismena': 5, 'souhlasky': 3, 'samohlasky': 2},<br>
+                    &nbsp;&nbsp;'krkavec': {'pismena': 7, 'souhlasky': 5, 'samohlasky': 2},<br>
+                    &nbsp;&nbsp;'myš': {'pismena': 3, 'souhlasky': 2, 'samohlasky': 1},<br>
+                }<br>
+            </div>
+            <div class="w3-code">
+                import json<br><br>
+                with open('soubor.json', mode='r', encoding='U8') as json_file:<br>
+                &nbsp;&nbsp;obsah_souboru = json.load(json_file)<br>
+                &nbsp;&nbsp;print(obsah_souboru)<br>
+            </div>
+        </div>
+
+        <li>* knihovna <code>xml</code> [<a href="https://docs.python.org/3/library/xml.etree.elementtree.html" target="_blank">dokumentace</a>]</li>
+
+        <li>knihovna <code>pickle</code> [<a href="https://docs.python.org/3/library/pickle.html" target="_blank">dokumentace</a>]: <code>pickle.load()</code>, <code>pickle.dump()</code></li>
+        
+        <li>knihovna <code>zipfile</code> [<a href="https://docs.python.org/3/library/zipfile.html" target="_blank">dokumentace</a>]: <code>zipfile.ZipFile().open()</code>, <code>zipfile.ZipFile().open()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka za-zipování a od-zipování souboru.</h6>
+            <div class="w3-code">
+                import zipfile<br><br>
+
+                with zipfile.ZipFile('soubor.zip', 'w') as zip_file:<br>
+                &nbsp;&nbsp;zip_file.write('zazipovany_soubor.txt')<br><br>
+
+                with zipfile.ZipFile('soubor.zip') as zip_file:<br>
+                &nbsp;&nbsp;with zip_file.open('zazipovany_soubor.txt') as muj_soubor:<br>
+                &nbsp;&nbsp;obsah_souboru = muj_soubor.read()<br>
+                &nbsp;&nbsp;print(obsah_souboru)<br>
+            </div>
+        </div>
+
+        <li>knihovna <code>gzip</code> a <code>shutil</code> [<a href="https://docs.python.org/3/library/gzip.html" target="_blank">dokumentace</a> a <a href="https://docs.python.org/3/library/shutil.html" target="_blank">dokumentace</a>]: <code>gzip.open()</code>, <code>shutil.copyfileobj()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka za-gzipování a od-gzipování souboru.</h6>
+            <div class="w3-code">
+                import gzip, shutils<br><br>
+
+                with open('soubor.txt', 'rb') as in_file:<br>
+                &nbsp;&nbsp;with gzip.open(soubor.txt.gz', 'wb') as out_file:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;shutil.copyfileobj(in_file, out_file)<br><br>
+
+                with gzip.open('soubor.gz', 'rb') as gz_file:<br>
+                &nbsp;&nbsp;obsah_souboru = gz_file.read()<br>
+            </div>
+        </div>
+
         <li>úkoly</li>
         <ul>
             <li><code>...</code> (5b): ...</li>
@@ -379,7 +512,6 @@
         </ul>
     </ul>
 </div>
--->
 
 
 <div class="w3-content w3-container w3-padding-12" id="10">

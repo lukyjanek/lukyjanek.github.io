@@ -420,8 +420,31 @@
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Jak číst a zapisovat do souboru? Co znamená klíčové slovo <code>with</code>?</h6>
             <div class="w3-code">
-                TODO: ... https://www.geeksforgeeks.org/with-statement-in-python/
+                # starší způsob čtení<br>
+                file = open('soubor.txt', 'r')<br>
+                obsah = file.read()<br>
+                file.close()<br><br>
+                # modernější způsob čtení<br>
+                with open('soubor.txt', mode='r', encoding='U8') as file:<br>
+                &nbsp;&nbsp;obsah = file.read()<br>
             </div>
+            <p>Čtení ze souboru lze také následovně:</p>
+            <ul>
+                <li><code>file.read()</code> (příp. <code>file.read(5)</code>),</li>
+                <li><code>file.readline()</code>,</li>
+                <li>prostým cyklem <code>for line in file: print(line)</code></li>
+            </ul>
+            <div class="w3-code">
+                # starší způsob zápisu<br>
+                file = open('soubor.txt', 'w')<br>
+                file.write('text...')<br>
+                file.close()<br><br>
+                # modernější způsob zápisu<br>
+                with open('soubor.txt', mode='r', encoding='U8') as file:<br>
+                &nbsp;&nbsp;file.write('text...') # nebo: print('text...', file=file)<br>
+            </div>
+            <p>* Parametr <code>mode</code> může nabývat několika hodnot, např. <code>w</code> (write), <code>r</code> (read), <code>b</code> (binary mode), <code>a</code> (append). Stejně tak <code>encoding</code>.</p>
+            <p><code>with</code> : zajišťuje, že nezůstane soubor otevřený a že čtení i zápis proběhnou hladce [<a href="https://docs.python.org/3/reference/compound_stmts.html#the-with-statement" target="_blank">popis z dokumentace</a>]</p>
         </div>
 
         <li>knihovna <code>csv</code> [<a href="https://docs.python.org/3/library/csv.html" target="_blank">dokumentace</a>]: <code>csv.reader()</code>, <code>csv.writer()</code></li>
@@ -485,7 +508,7 @@
 
                 with zipfile.ZipFile('soubor.zip') as zip_file:<br>
                 &nbsp;&nbsp;with zip_file.open('zazipovany_soubor.txt') as muj_soubor:<br>
-                &nbsp;&nbsp;obsah_souboru = muj_soubor.read()<br>
+                &nbsp;&nbsp;obsah_souboru = muj_soubor.read().decode('utf-8')<br>
                 &nbsp;&nbsp;print(obsah_souboru)<br>
             </div>
         </div>
@@ -501,14 +524,16 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;shutil.copyfileobj(in_file, out_file)<br><br>
 
                 with gzip.open('soubor.gz', 'rb') as gz_file:<br>
-                &nbsp;&nbsp;obsah_souboru = gz_file.read()<br>
+                &nbsp;&nbsp;obsah_souboru = gz_file.read().decode('utf-8')<br>
+                &nbsp;&nbsp;print(obsah_souboru)<br>
             </div>
         </div>
 
         <li>úkoly</li>
         <ul>
-            <li><code>...</code> (5b): ...</li>
-            <li><code>...</code> (5b): ...</li>
+            <li><code>kopie_souboru</code> (3b): Vytvořte program, který zkopíruje osah jednoho souboru do druhého souboru a zároveň změní formát obsahu (ve druhém souboru bude obsah vypsán po jednotlivých větách.)</li>
+            <li><code>csv2json</code> (5b): Vytvořte program, který přijme požadované argumenty a konvertuje obsah z formátu <code>csv</code> do formátu <code>json</code>.</li>
+            <li><code>ungzip_souboru</code> (3b): Vytvořte program, který roz-gzipuje vstupní soubor a uloží jeho obsah do textového souboru.</li>
         </ul>
     </ul>
 </div>

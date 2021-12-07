@@ -369,24 +369,6 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>knihovna <code>sys</code> [<a href="https://docs.python.org/3/library/sys.html" target="_blank">dokumentace</a>]: <code>sys.exit()</code>, <code>sys.argv</code>, <code>sys.path</code>, <code>sys.stdin</code></li>
-        
-        <li>knihovna <code>argparse</code> [<a href="https://docs.python.org/3/library/argparse.html" target="_blank">dokumentace</a>]</li>
-        <div class="w3-panel w3-card w3-light-grey">
-            <h6>Ukázka použití knihovny <code>argparse</code> k načtení parametrů.</h6>
-            <div class="w3-code">
-                import argparse<br><br>
-                parser = argparse.ArgumentParser()<br><br>
-                parser.add_argument('--input')<br>
-                parser.add_argument('--output', dest='out', help='popisek...')<br>
-                parser.add_argument('--parameter', type=float, help='popisek...')<br>
-                parser.add_argument('--load_google', choices=['Ano', 'Ne'], default='No', help='popisek...')<br>
-                parser.add_argument('--seznam', nargs='+', help='popisek...')<br><br>
-                args = parser.parse_args()<br><br>
-                print(args.input, args.out, args.load_google, args.seznam)<br>
-            </div>
-        </div>
-
         <li>knihovna <code>os</code> [<a href="https://docs.python.org/3/library/os.html" target="_blank">dokumentace</a>]</li>
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Ukázka použití knihovny <code>os</code>. Spojte příkaz s jeho správným komentářem.</h6>
@@ -414,6 +396,24 @@
                 os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# smaže zadaný soubor<br>
             </div>
             -->
+        </div>
+
+        <li>knihovna <code>sys</code> [<a href="https://docs.python.org/3/library/sys.html" target="_blank">dokumentace</a>]: <code>sys.exit()</code>, <code>sys.argv</code>, <code>sys.path</code>, <code>sys.stdin</code></li>
+        
+        <li>knihovna <code>argparse</code> [<a href="https://docs.python.org/3/library/argparse.html" target="_blank">dokumentace</a>]</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka použití knihovny <code>argparse</code> k načtení parametrů.</h6>
+            <div class="w3-code">
+                import argparse<br><br>
+                parser = argparse.ArgumentParser()<br><br>
+                parser.add_argument('--input')<br>
+                parser.add_argument('--output', dest='out', help='popisek...')<br>
+                parser.add_argument('--parameter', type=float, help='popisek...')<br>
+                parser.add_argument('--load_google', choices=['Ano', 'Ne'], default='No', help='popisek...')<br>
+                parser.add_argument('--seznam', nargs='+', help='popisek...')<br><br>
+                args = parser.parse_args()<br><br>
+                print(args.input, args.out, args.load_google, args.seznam)<br>
+            </div>
         </div>
 
         <li>čtení a zápis ze/do souboru</li>

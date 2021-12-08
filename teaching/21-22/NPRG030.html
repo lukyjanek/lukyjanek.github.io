@@ -371,7 +371,8 @@
     <ul>
         <li>knihovna <code>os</code> [<a href="https://docs.python.org/3/library/os.html" target="_blank">dokumentace</a>]</li>
         <div class="w3-panel w3-card w3-light-grey">
-            <h6>Ukázka použití knihovny <code>os</code>. Spojte příkaz s jeho správným komentářem.</h6>
+            <h6>Ukázka použití knihovny <code>os</code>.</h6> <!-- Spojte příkaz s jeho správným komentářem.</h6> -->
+            <!--
             <div class="w3-code">
                 import os<br><br>
                 os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí velikost souboru v Bytech<br>
@@ -383,7 +384,7 @@
                 os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# ? zjistí, zda adresář/soubor existuje<br>
                 os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? smaže zadaný adresář<br>
             </div>
-            <!--
+            -->
             <div class="w3-code">
                 import os<br><br>
                 os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# vrátí aktuální pracovní adresář<br>
@@ -395,7 +396,6 @@
                 os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# vrátí velikost souboru v Bytech<br>
                 os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# smaže zadaný soubor<br>
             </div>
-            -->
         </div>
 
         <li>knihovna <code>sys</code> [<a href="https://docs.python.org/3/library/sys.html" target="_blank">dokumentace</a>]: <code>sys.exit()</code>, <code>sys.argv</code>, <code>sys.path</code>, <code>sys.stdin</code></li>
@@ -440,7 +440,7 @@
                 file.write('text...')<br>
                 file.close()<br><br>
                 # modernější způsob zápisu<br>
-                with open('soubor.txt', mode='r', encoding='U8') as file:<br>
+                with open('soubor.txt', mode='w', encoding='U8') as file:<br>
                 &nbsp;&nbsp;file.write('text...') # nebo: print('text...', file=file)<br>
             </div>
             <p>* Parametr <code>mode</code> může nabývat několika hodnot, např. <code>w</code> (write), <code>r</code> (read), <code>b</code> (binary mode), <code>a</code> (append). Stejně tak <code>encoding</code>.</p>

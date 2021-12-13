@@ -335,6 +335,12 @@
 
     <div class="w3-panel w3-card w3-light-grey w3-center">
         <h3>Zápočtová písemka, 1. pokus</h3>
+            Úlohy:
+            Cesta věže
+            Domino
+            Datum za N dnů = "; iii"
+            Orientace
+            Komponenty souvislosti grafu = záchytná na konec
     </div>
 </div>
 -->
@@ -379,7 +385,8 @@
                 parser = argparse.ArgumentParser()<br><br>
                 parser.add_argument('--input')<br>
                 parser.add_argument('--output', dest='out', help='popisek...')<br>
-                parser.add_argument('--parameter', type=float, help='popisek...')<br>
+                parser.add_argument('--parameter1', type=float, help='popisek...')<br>
+                parser.add_argument('--parameter2', type=float, required=False, help='popisek...')<br>
                 parser.add_argument('--load_google', choices=['Ano', 'Ne'], default='No', help='popisek...')<br>
                 parser.add_argument('--seznam', nargs='+', help='popisek...')<br><br>
                 args = parser.parse_args()<br><br>

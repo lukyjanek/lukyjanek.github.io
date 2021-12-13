@@ -345,7 +345,7 @@
 </div>
 -->
 
-<!--
+
 <div class="w3-content w3-container w3-padding-12" id="12">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">12. cvičení (14.12.2021)</h3>
@@ -353,19 +353,154 @@
     <hr style="border: 2px solid orange">
 
     <ul>
+        <li>instalace externích knihoven</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka instalace externí knihovny (v příkazové řádce / terminálu).</h6>
+            <div class="w3-code">
+                # dlouhá notace<br>
+                python3 -m pip install __jmeno_knihovny__<br>
+                python3 -m pip install regex<br><br>
+
+                # kratší notace<br>
+                pip3 install __jmeno_knihovny__<br>
+                pip3 install networkx==2.4<br>
+            </div>
+            <p><strong>Správce:</strong> Když je knihovna instalována přímo do systému, je potřeba k instalaci externí knihovny povolení správce. Ve Windows by mělo stačit spustit příkazový řádek <em>jako správce</em>; v Unix by mělo stačit použít před výše uvedený příkaz klíčové slůvko <code>sudo</code>.</p>
+            <p><strong>Verze:</strong> Pokud chcete nainstalovat konkrétní verzi nějaké knihovny, stačí bezprostředně za název připojit <code>==číslo_verze</code></p>
+        </div>
+
         <li>virtuální prostředí</li>
-        <li>instalace knihoven</li>
-        <li>knihovny networkx, request, regex, numpy, pandas, matplotlib/seaborn, sklearn</li>
-        <li>doporučené kurzy: Deep Learning, Machine Learningn for Greenhorns, Technology for NLP or Introduction to Language Technologies</li>
-        <li>knihovny Flask, TKinter, PyQt, pygames</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka práce s virtuálním prostředím. Windows a Unix vytváří prostředí jinak (nelze zaměňovat).</h6>
+            <div class="w3-code">
+                # jedna možnost - Unix i Windows<br>
+                python3 -m venv __nazev_adresare__<br>
+                python3 -m venv py3env<br><br>
+
+                # druhá možnost - Unix<br>
+                virtualenv -p python3 __nazev_adresare__<br>
+                virtualenv -p python3 py3env<br><br>
+
+                # aktivace - Unix<br>
+                source py3env/bin/activate<br><br>
+
+                # aktivace - Windows<br>
+                .\py3env\Scripts\activate<br><br>
+
+                # deaktivace<br>
+                deactivate<br><br>
+
+                # instalace knihoven bez aktivace<br>
+                py3env/bin/python3 -m pip install __jmeno_knihovny__<br>
+            </div>
+        </div>
+
+        <li>knihovny pro tvorbu <strong>grafického uživatelského rozhranní (GUI)</strong>:</li>
+        <ul>
+            <li><code>pyqt</code> [<a href="https://www.qt.io/" target="_blank">web</a>] [<a href="https://naucse.python.cz/lessons/intro/pyqt/" target="_blank">ukázka/dokumentace</a>]</li>
+
+            <li><code>tkinter</code> [<a href="http://tkinter.programujte.com/" target="_blank">dokumentace</a>] a [<a href="https://realpython.com/python-gui-tkinter/" target="_blank">ukázka</a>]</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Tvorba GUI pomocí <code>tkinter</code>. Vytvořme jednoduchý formulář.</h6>
+                <div class="w3-code">
+                    import tkinter as tk<br><br>
+
+                    window = tk.Tk()<br>
+                    window.option_add('*Font', 'Arial 9')<br><br>
+
+                    jmeno_label = tk.Label(window, text='Jméno:').pack()<br>
+                    jmeno_entry = tk.Entry(window)<br>
+                    jmeno_entry.pack()<br><br>
+
+                    prijmeni_label = tk.Label(window, text='Příjmení:').pack()<br>
+                    prijmeni_entry = tk.Entry(window)<br>
+                    prijmeni_entry.pack()<br><br>
+
+                    telefon_label = tk.Label(window, text='Telefon:').pack()<br>
+                    telefon_entry = tk.Entry(window)<br>
+                    telefon_entry.insert(0, '+420')<br>
+                    telefon_entry.pack()<br><br>
+
+                    def odesli():<br>
+                    &nbsp;&nbsp;print(jmeno_entry.get())<br>
+                    &nbsp;&nbsp;print(prijmeni_entry.get())<br>
+                    &nbsp;&nbsp;print(telefon_entry.get())<br><br>
+
+                    tk.Button(window, text=u"Odešli", width=10, command=odesli).pack()<br><br>
+
+                    tk.mainloop()<br>
+                </div>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Naformátujte formulář tak, abyste použili Grid, přidejte políčka.</h6>
+                <div class="w3-code">
+                    import tkinter as tk<br><br>
+
+                    window = tk.Tk()<br>
+                    window.option_add('*Font', 'Arial 9')<br><br>
+
+                    window.columnconfigure([0, 1, 2, 3], minsize=100)<br><br>
+
+                    jmeno_label = tk.Label(window, text='Jméno:').grid(row=0)<br>
+                    jmeno_entry = tk.Entry(window)<br>
+                    jmeno_entry.grid(row=0, column=1)<br><br>
+
+                    prijmeni_label = tk.Label(window, text='Příjmení:').grid(row=0, column=2)<br>
+                    prijmeni_entry = tk.Entry(window)<br>
+                    prijmeni_entry.grid(row=0, column=3)<br><br>
+
+                    telefon_label = tk.Label(window, text='Telefon:').grid(row=1)<br>
+                    telefon_entry = tk.Entry(window)<br>
+                    telefon_entry.insert(0, '+420')<br>
+                    telefon_entry.grid(row=1, column=1)<br><br>
+
+                    def odesli():<br>
+                    &nbsp;&nbsp;print(jmeno_entry.get())<br>
+                    &nbsp;&nbsp;print(prijmeni_entry.get())<br>
+                    &nbsp;&nbsp;print(telefon_entry.get())<br><br>
+
+                    tk.Button(window, text=u"Odešli", width=10, command=odesli).grid(row=3, column=3)<br><br>
+
+                    tk.mainloop()<br>
+                </div>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Přidejte políčko <em>název souboru</em> a uložte do zadaného souboru vložená data v <code>.json</code> formátu.</h6>
+            </div>
+
+            <li>*pro tvorbu jednoduchých her lze doporučit knihovnu <code>pygame</code> (viz [<a href="https://realpython.com/pygame-a-primer/" taget="_blank">ukázka</a>] a [<a href="https://www.pygame.org/wiki/GettingStarted" taget="_blank">dokumentace</a>])</li>
+        </ul>
+
+        <li>užitečné knihovny pro <strong>zpracování dat</strong>:</li>
+        <ul>
+            <li><code>numpy</code> - pro zpracování číselných dat [<a href="https://numpy.org/" target="_blank">web</a>] [<a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>regex</code> - pro zpracování textu (modernější než původní knihovna <code>re</code>) [<a href="https://pypi.org/project/regex/" target="_blank">web</a>] [<a href="https://www.regular-expressions.info/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>networkx</code> - pro zpracování grafů [<a href="https://networkx.org/" target="_blank">web</a>] [<a href="https://networkx.org/documentation/stable/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>pandas</code> - pro zpracování libovolných datových zdrojů, převážně tabulkového/csv/xlsx formátu [<a href="https://pandas.pydata.org/" target="_blank">web</a>] [<a href="https://naucse.python.cz/lessons/intro/pandas/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>matplotlib</code> a <code>seaborn</code> - pro vizualizaci dat v podobě grafů a diagramů [<a href="https://matplotlib.org/" target="_blank">web</a>] [<a href="https://matplotlib.org/stable/tutorials/index" target="_blank">ukázka/dokumentace</a>] a [<a href="https://seaborn.pydata.org/" target="_blank">web</a>] [<a href="https://seaborn.pydata.org/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>request</code> - pro zpracování webu [<a href="https://docs.python-requests.org/en/latest/" target="_blank">web</a>] [<a href="https://docs.python-requests.org/en/latest/user/quickstart/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>flask</code> a <code>django</code> - pro vytváření webu [<a href="https://flask.palletsprojects.com/en/2.0.x/#" target="_blank">web</a>] [<a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">ukázka/dokumentace</a>] a [<a href="https://www.djangoproject.com/" target="_blank">web</a>] [<a href="https://docs.djangoproject.com/en/4.0/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>sklearn</code> - pro zpracování strojového učení [<a href="https://scikit-learn.org/stable/" target="_blank">web</a>] [<a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>tensorflow</code> - pro zpracování neuronových sítí [<a href="https://www.tensorflow.org/" target="_blank">web</a>] [<a href="https://www.tensorflow.org/overview" target="_blank">ukázka/dokumentace</a>]</li>
+            <li>doporučené kurzy:</li>
+            <ul>
+                <li><em>Technology for NLP</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl092" target="_blank">NPFL092</a>] nebo <em>Introduction to Language Technologies</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl125" target="_blank">NPFL125</a>]</li>
+                <li><em>Machine Learningn for Greenhorns</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl129/2122-winter" target="_blank">NPFL129</a>]</li>
+                <li><em>Deep Learning</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl114/2021-summer" target="_blank">NPFL114</a>]</li>
+            </ul>
+        </ul>
+
         <li>úkoly</li>
         <ul>
-            <li><code>...</code> (5b): ...</li>
-            <li><code>...</code> (5b): ...</li>
+            <li><code>k_ciferna_cisla</code> (2b): Vytvořte program, který na vstupu přijme dvojici čísel <em>k</em> a <em>n</em> a vytvoří všechna <em>k</em>-ciferná čísla se součtem <em>n</em>.</li>
+            <li><code>formatovani_textu</code> (1b): Vytvořte program, který na vstupu přijme řádek textu a číslo <em>w</em>. Na základě těchto informací vrátí na výstupu text rozdělený na řádky o délce <em>w</em> znaků.</li>
+            <li><code>pocet_dni</code> (3b): Vytvořte program, který spočítá počet dní mezi dvěma zadanými daty.</li>
+            <li><code>palety</code> (3b): Vytvořte program, který na základě velikostí krabic zadaných na vstupu vypočte potřebný počet palet, na které se mají krabice naložit.</li>
+            <li><code>rada_kostek</code> (3b): Vytvořte program, který na vstupu dostane počty a typy dominových konstek, které jsou k dispozici, a sestaví z nich nejdelší možnou posloupnost. Program vypíše jak délku, tak podobu této posloupnosti.</li>
         </ul>
     </ul>
 </div>
--->
+
 
 
 <div class="w3-content w3-container w3-padding-12" id="11">

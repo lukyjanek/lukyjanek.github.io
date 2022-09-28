@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="robots" content="index, follow">
+	<title>L. Kyjanek - NPRG030 (22-23)</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/user.png" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../styles/w3.css">
+	<link rel="stylesheet" href="../../styles/font.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+	<style>
+    body, h1, h2, h3, h4, h5, h6 {font-family: arial, "Lato", sans-serif;}
+    p {margin-top: 0px;}
+	th {font-size: x-large; color: orange;}
+
+	.pdf {color: blue; font-weight: bold;}
+
+	body, html {
+	    height: 100%;
+	    line-height: 1.5;
+	}
+
+	.w3-wide {letter-spacing: 10px;}
+	.w3-hover-opacity {cursor: pointer;}
+
+	</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-top w3-black">
+    <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i> Obsahy jednotlivých cvičení
+        </a>
+        <a href="https://lukyjanek.github.io/" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+        <!-- <input type="text" class="w3-bar-item w3-input w3-light-grey w3-border w3-hide-small" placeholder="Search" style="width:15%"> -->
+    </div>
+
+    <!-- Navbar for small screens -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide">
+        <div class="w3-col m3 w3-center">
+            <a href="#1" class="w3-bar-item w3-button" onclick="toggleFunction()">1. cvičení (29.09.2022)</a>
+            <a href="#2" class="w3-bar-item w3-button" onclick="toggleFunction()">2. cvičení (06.10.2022)</a>
+            <a href="#3" class="w3-bar-item w3-button" onclick="toggleFunction()">3. cvičení (13.10.2022)</a>
+            <a href="#4" class="w3-bar-item w3-button" onclick="toggleFunction()">4. cvičení (20.10.2022)</a>
+        </div>
+        <div class="w3-col m3 w3-center">
+            <a href="#5" class="w3-bar-item w3-button" onclick="toggleFunction()">5. cvičení (27.10.2022)</a>
+            <a href="#6" class="w3-bar-item w3-button" onclick="toggleFunction()">6. cvičení (03.11.2022)</a>
+            <a href="#7" class="w3-bar-item w3-button" onclick="toggleFunction()"><strike>7. cvičení (10.11.2022)</strike></a>
+            <a href="#8" class="w3-bar-item w3-button" onclick="toggleFunction()">8. cvičení (17.11.2022)</a>
+        </div>
+        <div class="w3-col m3 w3-center">         
+            <a href="#9" class="w3-bar-item w3-button" onclick="toggleFunction()">9. cvičení (24.11.2022)</a>
+            <a href="#10" class="w3-bar-item w3-button" onclick="toggleFunction()">10. cvičení (01.12.2022)</a>
+            <a href="#11" class="w3-bar-item w3-button" onclick="toggleFunction()">11. cvičení (08.12.2022)</a>
+            <a href="#12" class="w3-bar-item w3-button" onclick="toggleFunction()">12. cvičení (15.12.2022)</a>
+        </div>
+        <div class="w3-col m3 w3-center">    
+            <a href="#13" class="w3-bar-item w3-button" onclick="toggleFunction()">13. cvičení (22.12.2022)</a>
+            <a href="#14" class="w3-bar-item w3-button" onclick="toggleFunction()"><strike>14. cvičení (29.12.2022)</strike></a>
+            <a href="#15" class="w3-bar-item w3-button" onclick="toggleFunction()">15. cvičení (05.01.2023)</a>
+            <a href="#obecne" class="w3-bar-item w3-button" onclick="toggleFunction()">Obecné informace</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- ABOUT -->
+<div class="w3-content w3-container w3-padding-48" id="home">
+    <h3 class="w3-center w3-xxxlarge w3-hide-small">Cvičení z Programování 1 [NPRG030]</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">Cvičení z Programování 1 [NPRG030]</h3>
+
+    <hr>
+
+    <div class="w3-row" id="obecne">
+        <h3 class="w3-xxlarge w3-hide-small w3-center">Obecné informace (2022/2023)</h3>
+        <h3 class="w3-xlarge w3-hide-large w3-hide-medium">Obecné informace  (2022/2023)</h3>
+
+        <div class="w3-row">
+            <!-- Obsah -->
+            <div class="w3-col l6 m6 w3-padding-small">
+                <div class="w3-card-4">
+                    <header class="w3-container w3-indigo w3-center">
+                        <h5>Místo a čas</h5>
+                    </header>
+                    <div class="w3-container">
+                        <ul>
+                            <li>Přednáška</li>
+                            <ul>
+                                <li>Dr. T. Holan v úterý od 10:40, [<a target="_blank" href="https://ksvi.mff.cuni.cz/~holan/CoBylo22.txt">obsah</a>]</li>
+                                <li>Dr. M. Pergler ve středu od 17:20, [<a target="_blank" href="https://kam.mff.cuni.cz/~perm/programovani/NNPRG030/">obsah</a>]</li>
+                            </ul>
+                            <li>Cvičení</li>
+                            <ul>
+                                <li>L. Kyjánek ve čtvrtek 14:00-15:30 v učebně N11</li>
+                                <li>je podmínkou zapsat si v souvislém tříhodinovém bloku s cvičením Tomáše Bílého (<a target="_blank" href="https://is.cuni.cz/studium/predmety/index.php?do=predmet&kod=NPRG062">Algoritmizace</a>)</li>
+                            </ul>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ReCodEx -->
+            <div class="w3-col l6 m6 w3-padding-small">
+                <div class="w3-card-4">
+                    <header class="w3-container w3-green w3-center">
+                        <h5>ReCodEx</h5>
+                    </header>
+                    <div class="w3-container">
+                        <ul>
+                            <li>web: <a target="_blank" href="https://recodex.mff.cuni.cz/">https://recodex.mff.cuni.cz/</a></li>
+                            <li>systém pro odevzdání úkolů a zápočtového testu</li>
+                            <li>[<a target="_blank" href="http://www.ms.mff.cuni.cz/ReCodEx/NewUserDoc.pdf">příručka pro nové uživatele</a>] vysvětluje, jak získat vlastní účet; studenti MFF se přihlašují pomocí CAS</li>
+                            <li>[<a target="_blank" href="http://www.ms.mff.cuni.cz/ReCodEx/StudentDoc.pdf">příručka pro studenty</a>] vysvětluje práci s ReCodExem</li>
+                            <li>ReCodEx umí být záludný, hlavně co se týká kontroly správnosti odevzdávaných řešení; v případě potíží se obraťte na mě a společně případné problémy vyřešíme</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>         
+        </div>
+    </div>
+
+    <br>
+
+    <div class="w3-row w3-padding-small">
+        <!-- Zápočet -->
+        <div class="w3-card-4">
+            <header class="w3-container w3-amber w3-center">
+                <h5>Zápočet</h5>
+            </header>
+            <div class="w3-container">
+                <ul>
+                    <li>průběžné domácí úkoly</li>
+                    <ul>
+                        <li>každý týden 1-3 úlohy, na vypracování je 10 dní; zadávány budou v ReCodExu</li>
+                        <li>celkem 100 bodů, pro splnění stačí alespoň 80</li>
+                    </ul>
+
+                    <li>zápočtový programovací test</li>
+                    <ul>
+                        <li>na konci semestru programovací test (budou mu věnována poslední 2 cvičení)</li>
+                        <li>1. pokus (<a style="color:red">22.12.2022</a>), 2. pokus (<a style="color:red">05.01.2023</a>)</li>
+                        <li>zadán bude v ReCodExu, vypracovávat ho ale budete v učebně</li>
+                    </ul>
+
+                    <li>zápočtový program</li>
+                    <ul>
+                        <li>samostatně vytvořit funkční program (větší než jsou průběžně zadávané úkoly), včetně dokumentace</li>
+
+                        <li>(do <a style="color:red">22.12.2022</a>) <em>jak získat zadání?</em></li>
+                        <ul>
+                            <li>zadání si vytváříte sami, může se jednat o cokoli, ale musíte ho se mnou předem dohodnout (e-mailem)</li>
+                            <li>pošlete mi v e-mailu stručný popis toho, co chcete dělat; buď vám zadání schválím, nebo ho společně doladíme</li>
+                            <li>pokud máte jen vágní nápad, také mi napište a něco vymyslíme; pokud nemáte žádný nápad, můžete se inspirovat v seznamech od kolegů, např. [<a target="_blank" href="https://ksvi.mff.cuni.cz/~holan/zap_zs_2019-20_python.txt">T. Holan</a>] nebo [<a target="_blank" href="https://docs.google.com/document/d/1E9s7KB46sPQ0ZN6XVg9XFTsCjIurB1UjyTfg4Y1RnvY/edit">R. Rosa</a>] nebo [<a target="_blank" href="http://mj.ucw.cz/vyuka/zap/">M. Mareš</a>] (často jsou to spíše návrhy na bakalářské/diplomkové projekty, tak se nezalekněte rozsahu a komplexnosti)</li>
+                        </ul>
+
+                        <li><em>jak vytvořit program a dokumentaci?</em></li>
+                        <ul>
+                            <li>v kódu můžete použít libovolné knihovny, ale v odevzdávaném programu musí být vidět váš vklad</li>
+                            <li>neodkládejte práci; zkušenost ukazuje, že když si myslíte, že to budete mít za týden, potrvá to spíš měsíc</li>
+                            <li>dbejte na strukturovanost, přehlednost a funkčnost v kódu i dokumentaci</li>
+                            <li>pokud to dává smysl, přiložte také testovací vstupní data</li>
+                            <li>jako dokumentaci sepište stručný doprovodný dokument (.pdf), ve kterém uvedete:</li>
+                            <ul>
+                                <li>zadání/cíl řešené úlohy</li>
+                                <li>očekávané vstupy, výstupy; popis základního ovládání programu</li>
+                                <li>popis principu řešení, použitých datových struktur, příp. algoritmů</li>
+                                <li>vlastní zhodnocení práce (co se vám povedlo, na co jste hrdí, co ještě potřebuje péči, jak lze program rozšířit)</li>
+                            </ul>
+                            <li>nezávazné tipy, jak napsat dokumentaci naleznete [<a target="_blank" href="https://ksvi.mff.cuni.cz/~kryl/dokumentace.htm">zde</a>]</li>
+                        </ul>
+
+                        <li>(do <a style="color:red">31.03.2023</a>) <em>jak zápočtový program odevzdat?</em></li>
+                        <ul>
+                            <li>odevzdání proběhne formou osobního předvedení ať už v prostorách MFF, nebo online</li>
+                            <li>předem mi e-mailem pošlete svůj zápočtový program vč. dokumentace; společně se domluvíme na termínu setkání</li>
+                            <li>nepřipravujte žádnou prezentaci, pouze mi ukážete, jak program funguje, a pokud to nebude zřejmé z dokumentace, promluvíme si o jeho řešení</li>
+                            <li>rozhodně můžete odevzdávat program dříve než je uvedené datum (pokud chcete zápočet alespoň do konce února [pro účely průběžné kontroly studijních povinností, tj. 28.02.2023], odevzdejte mi program do konce zkouškového období, tj. 12.02.2023)</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="w3-row">
+        <!-- Komunikace -->
+        <div class="w3-col l6 m6 w3-padding-small">
+            <div class="w3-card-4">
+                <header class="w3-container w3-red w3-center">
+                    <h5>Komunikace a konzultace</h5>
+                </header>
+                <div class="w3-container">
+                    <ul>
+                        <li>dejte vědět kdykoli budete potřebovat s něčím poradit nebo pomoct, např.: <em>mám nefunkční kus kódu, nerozuměl jsem něčemu na cvičení, mám dotaz, nerozumím zadání úkolu, potřebuji poradit s řešením zadaného úkolu atd.</em></li>
+                        <br>
+                        <li>e-mail: kyjanek@ufal.mff.cuni.cz (do předmětu: <code>NPRG030</code>)</li>
+                        <li>pravidlně budu k dispozici bezprostředně po cvičeních</li>
+                        <li>podle vašich možností/preferencí si můžeme domluvit také online setkání</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zdroje informací -->
+        <div class="w3-col l6 m6 w3-padding-small">
+            <div class="w3-card-4">
+                <header class="w3-container w3-gray w3-center">
+                    <h5>Další zdroje informací</h5>
+                </header>
+                <div class="w3-container">
+                    <ul>
+                        <li>kurzy [<a target="_blank" href="https://naucse.python.cz/">NaucSePython</a>], [<a target="_blank" href="https://www.sallyx.org/sally/python/python1.php">Sallyx</a>], [<a target="_blank" href="https://www.w3schools.com/python/default.asp">W3 schools</a>], [<a target="_blank" href="https://www.kaggle.com/learn/python">Kaggle</a>], [<a target="_blank" href="https://pythonprogramming.net/">PythonProgramming</a>] a cvičení [<a target="_blank" href="https://codingbat.com/python">CodingBat</a>]</li>
+                        <li>tahák [<a target="_blank" href="https://learnxinyminutes.com/docs/cs-cz/python/">LearnXinYminutes</a>]</li>
+                        <li>kniha [<a target="_blank" href="http://diveintopython3.py.cz/index.html">DiveIntoPython3</a>]</li>
+                        <li>korespondenční seminář [<a target="_blank" href="https://ksp.mff.cuni.cz/">KSP</a>]</li>
+                    </ul>
+                    <center>
+                        Dr. Martin Mareš vede cvičení z <a target="_blank" href="http://mj.ucw.cz/vyuka/2223/p1x/">Algoritmizace a Programování 1 pro pokročilé</a>. Lze si zapsat, nebo navštěvovat čistě ze zájmu. Koná se ve čtvrtek.
+                    </center>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="w3-row w3-padding-small">
+        <!-- Obsah -->
+        <div class="w3-card-4">
+            <div class="w3-card-4">
+                <header class="w3-container w3-indigo w3-center">
+                    <h5>Užitečné návody (mimo náplň kurzu Programování)</h5>
+                </header>
+                <div class="w3-container">
+                    <ul>
+                        <li>Linuxový terminál pro Windows</li>
+                        <ul>
+                            <li>[<a target="_blank" href="https://ubunlog.com/cs/wsl-como-instalar-y-usar-el-susbistema-ubuntu-en-windows-10/?utm_source=feedburner&utm_medium=%24%7Bfeed%2C+email%7D&utm_campaign=Feed%3A+%24%7BUbunlog%7D+%28%24%7BUbunlog%7D%29">návod na instalaci</a>]</li>
+                        </ul>
+                        
+                        <li>Vzdálený přístup do MFF sítě pro čtení, zápis, spouštění souborů</li>
+                        <ul>
+                            <li>provádí se pomocí příkazu <code>ssh</code></li>
+                            <li>v terminálu se přihlašujete pomocí příkazu: <code>ssh [cas jmeno]@u-pl[1-25].ms.mff.cuni.cz</code></li>
+                            <li>uvedené číslo pracovní stanice [1-25] můžete zvolit libovolně; na MFF počítačích je Unix (pozor na <code>dir</code> vs. <code>ls</code> atd.)</li>
+                        </ul>
+
+                        <li>Vzdálený přístup do MFF sítě pro stahování/nahrávání souborů do/z vlastního počítače</li>
+                        <ul>
+                            <li>provádí se pomocí příkazu <code>sftp</code></li>
+                            <li>v terminálu se přihlašujete pomocí příkazu: <code>sftp [cas jmeno]@u-pl[1-25].ms.mff.cuni.cz</code></li>
+                            <li>hlavním účelem je, abyste stáhli/nahráli požadovaný soubor; pomocí následujících příkazů:</li>
+                            <ul>
+                                <li><code>put [umístění souboru v lokalním pc] [cílové umístění na vzdáleném pc]</code><br> slouží k nahrání souboru z lokálního počítače na vzdálený počítač</li>
+                                <li><code>get [umístění souboru na vzdaleném pc] [cílové umístění na lokálním pc]</code><br> slouží ke stažení souboru ze vzdáleného počítače do lokálního počítače</li>
+                                <li>(umístění v lokálním počítači se bere z adresáře, ze kterého se volal příkaz <code>sftp</code>; pro umístění přímo do adresáře, ze kterého se příkaz volal, stačí místo cesty zadat tečku)</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="1">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">1. cvičení (29.09.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">1. cvičení (29.09.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>vzájemné seznámení, Mentimeter (<a target="_blank" href="https://www.menti.com/">https://www.menti.com/</a>)</li>
+        <li>organizační záležitosti, viz <a href="#obecne">Obecné informace</a></li>
+        <li>programování v Pythonu (<code>.py</code>, <code>.ipynb</code>)</li>
+        <ul>
+            <li>online</li>
+            <ul>
+                <li>Google Colaboratory (<a target="_blank" href="https://colab.research.google.com/">https://colab.research.google.com/</a>)</li>
+                <li>Jupyter Notebook (<a target="_blank" href="https://jupyter.org/try-jupyter/retro/notebooks/?path=notebooks/Intro.ipynb">https://jupyter.org/try-jupyter/retro/notebooks/?path=notebooks/Intro.ipynb</a>)</li>
+                <li>Jupyter Laboratory (<a target="_blank" href="https://jupyter.org/try-jupyter/lab/">https://jupyter.org/try-jupyter/lab/</a>)</li>
+            </ul>
+            <li>lokálně</li>
+            <ul>
+                <li>instalace Pythonu (<a target="_blank" href="https://www.python.org/">zde</a>)</li>
+                <li>vybraná vývojová prostředí pro programování (IDE; Integrated Development Environment)</li>
+                <ul>
+                    <li><a target="_blank" href="https://code.visualstudio.com/docs/python/python-tutorial">Visual Studio Code</a></li>
+                    <li><a target="_blank" href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html">PyCharm</a></li>
+                    <li><a target="_blank" href="https://flight-manual.atom.io/">Atom.io</a></li>
+                    <li><a target="_blank" href="https://www.geany.org/documentation/manual/">Geany</a></li>
+                    <li><a target="_blank" href="https://www.nano-editor.org/dist/v2.1/nano.html">nano</a></li>
+                    <li><a target="_blank" href="https://i.iinfo.cz/files/root/k/vim-tutorial.pdf">vim</a></li>
+                </ul>
+                <li>spouštění programu přes Terminál (<code>python3 jmeno_programu.py</code> / <code>py jmeno_programu.py</code>) vs. dvojklikem</li>
+            </ul>
+            <li>iPython (<a target="_blank" href="https://ipython.readthedocs.io/en/stable/">https://ipython.readthedocs.io/en/stable/</a>)</li>
+            <li>funkční a estetický kód - PEP8 (<a target="_blank" href="https://www.python.org/dev/peps/pep-0008/">zde</a>)</li>
+        </ul>
+
+        <li>nová látka</li>
+        <ul>
+            <li>datové typy: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>, <code>None</code></li>
+            <ul>
+                <li>lze je používat i jako funkce, které mění jeden datový typ na požadovaný (pokud to lze), např. <code>str(5)</code> vrátí <code>'5'</code></li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Jakými datovými typy jsou proměnné <code>a</code>-<code>g</code>? Ověřte pomocí funkce <code>type()</code>.</h6>
+                <div class="w3-code">
+                  a = 1<br>
+                  b = 1.5<br>
+                  c = 'ahoj'<br>
+                  d = True<br>
+                  e = None<br>
+                  f = '20'<br>
+                  g = "pozdravení"<br>
+                </div>
+            </div>
+
+            <li>základní operace s proměnnými: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>**</code>, <code>//</code>, <code>%</code></li>
+            <ul>
+                <li>pozor na datové typy vstupních proměnných</li>
+                <li>pozor na uzávorkování u číselných operací</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Jak dopadnou následující operace? Jaký datový typ budou mít výsledky? Vymyslete případy, kdy operace vrátí error.</h6>
+                <div class="w3-code">
+                  a = 1 + 1<br>
+                  b = 1.5 - 1<br>
+                  c = 3 * 5<br>
+                  d = 4 ** 2<br>
+                  e = 10 / 2<br>
+                  f = 10 // 3<br>
+                  g = 5 % 4<br>
+                  h = 'černo' + 'bílý'<br>
+                  i = 2 * 'po' + 'skočit'<br>
+                  j = 3 * 4 + 2<br>
+                  k = 3 * (4 + 2)<br>
+                  l = True + 5<br>
+                  m = a + b<br>
+                  n = h * b<br>
+                  o = g + i<br>
+                </div>
+            </div>
+
+            <li>funkce: <code>print()</code>, <code>input()</code>, <code>str.format()</code>, <code>type()</code></li>
+            <ul>
+                <li>vkládání a vypisování výsledků do terminálu</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Pozdravte svým prvním programem. Modifikujte program tak, aby umocňoval vložený vstup na druhou.</h6>
+                <div class="w3-code">
+                  a = 'ahoj'<br>
+                  b = input('Zadejte své jméno v 5. pádě: ')<br>
+                  c = a + ' ' + b + '!'<br>
+                  print(c)
+                  <br><br>
+                  # jiné způsoby, jak vytisknout tentýž výstup:<br>
+                  print(a + ' ' + b + '!')<br>
+                  print('ahoj {}!'.format(b))<br>
+                </div>
+            </div>
+        </ul>
+    </ul>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-24">
+    Spravuje Lukáš Kyjánek
+    <br><br>
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card-4" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card-4 w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>

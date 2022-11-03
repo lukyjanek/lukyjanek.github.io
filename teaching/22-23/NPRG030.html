@@ -53,8 +53,8 @@
         <div class="w3-col m3 w3-center">
             <a href="#5" class="w3-bar-item w3-button" onclick="toggleFunction()"><strike>5. cvičení (27.10.2022)</strike></a> <!-- imatrikulace -->
             <a href="#6" class="w3-bar-item w3-button" onclick="toggleFunction()">6. cvičení (03.11.2022)</a>
-            <a href="#7" class="w3-bar-item w3-button" onclick="toggleFunction()"><strike>7. cvičení (10.11.2022)</strike></a>
-            <a href="#8" class="w3-bar-item w3-button" onclick="toggleFunction()">8. cvičení (17.11.2022)</a>
+            <a href="#7" class="w3-bar-item w3-button" onclick="toggleFunction()">7. cvičení (10.11.2022)</a>
+            <a href="#8" class="w3-bar-item w3-button" onclick="toggleFunction()"><strike>8. cvičení (17.11.2022)</strike></a>
         </div>
         <div class="w3-col m3 w3-center">         
             <a href="#9" class="w3-bar-item w3-button" onclick="toggleFunction()">9. cvičení (24.11.2022)</a>
@@ -278,6 +278,54 @@
 
 
 <!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="6">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">6. cvičení (3.11.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">6. cvičení (3.11.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>reflexe uběhlých domácích úkolů</li>
+
+        <li>datová struktura <code>dict()</code>: <code>dict.get()</code>, <code>dict.keys()</code>, <code>dict.values()</code>, <code>dict.items()</code>, <code>dict.pop()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka, jak vypadá datová struktura <code>dict()</code> a jak lze pracovat s jejími metodami.</h6>
+            <div class="w3-code">
+                auto_1 = dict()<br>
+                auto_1['znacka'] = 'Ford'<br>
+                auto_1['model'] = 'Mustang'<br>
+                auto_1['rok'] = 1964<br><br>
+
+                auto_2 = {'znacka': 'Audi', 'model': 'Q5', 'rok': 2019}<br><br>
+
+                print(auto_1.keys())<br>
+                print(auto_1.values())<br><br>
+
+                for klic, hodnota in auto_2.items():<br>
+                &nbsp;&nbsp;print(klic, hodnota, sep='\t')<br><br>
+
+                auto_2.pop('znacka')<br>
+                print(auto_1.keys())<br>
+              </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vytvořte program, který převede nasledující data z jejich originálního formátu do formátu <code>dict()</code>. V klíčích bude vždy zvíře, zatímco v hodnotě jeho jméno. Výsledný slovník se celý vypíše na výstupu pomocí metody <code>dict.items()</code>; kolik se vypíše řádků? Na závěr nechte vypsat pomocí metody <code>dict.get()</code> hodnoty klíčů 'kočka', 'rak' a 'želva'; pokud neexistuje, ať se místo jména vypíše 'není'.</h6>
+            <div class="w3-code">
+                seznam = [('kočka', 'Anička'), ('pes', 'Petr'), ('želva', 'Marie'), ('andulka', 'Boženka'), ('veverka', 'Tereza'), ('datel', 'Marek'), ('orel', 'Josef'), ('noserožec', 'Damián'), ('beruška', 'Magdaléna'), ('ropucha', 'Běla'), ('kačer', 'Bohumír'), ('kůň', 'Martin'), ('kohout', 'Benedikt'), ('hroch', 'Bohouš'), ('želva', 'Apolena')]
+            </div>
+        </div>
+    
+        <li>třídicí/řadicí algoritmy</li>
+        <ul>
+            <li>složitosti: <a target="_blank" href="https://en.wikipedia.org/wiki/Sorting_algorithm">wikipedia.org</a></li>
+            <li>ilustrace: <a target="_blank" href="https://www.toptal.com/developers/sorting-algorithms">toptal.com</a></li>
+            <li>principy základních algoritmů a jejich pseudokódy: <a target="_blank" href="https://www.algoritmy.net/article/3/Bubble-sort">algoritmy.net</a></li>
+            <li>procvičení: úloha <code>06_trideni</code></li>
+        </ul>
+    </ul>
+</div>
+
+
 <div class="w3-content w3-container w3-padding-12" id="5">
     <h3 class="w3-center w3-xxlarge w3-hide-small">5. cvičení (27.10.2022)</h3>
     <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">5. cvičení (27.10.2022)</h3>

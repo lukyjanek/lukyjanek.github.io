@@ -278,6 +278,69 @@
 
 
 <!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="7">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">7. cvičení (10.11.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">7. cvičení (10.11.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>zápočtový program, viz "Obecné informace"</li>
+        <ul>
+            <li>zadání zápočtového programu do <a style="color:red">22.12.2022</a>: e-mailem mi dejte vědět, co byste rádi programovali</li>
+            <li>dokumentace: komentáře v kódu (má to své <a target="_blank" href="https://www.python.org/dev/peps/pep-0257/">konvence</a>) a textový soubor</li>
+        </ul>
+
+        <li>objektové programování</li>
+        <ul>
+            <li>jednoduché objekty a metody</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka objektu a jeho metod.</h6>
+                <div class="w3-code">
+                    class Clovek:<br>
+                    &nbsp;&nbsp;def __init__(self, jmeno):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;self.jmeno = jmeno<br><br>
+                    
+                    &nbsp;&nbsp;def rekni(self, text):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;reknu = self.jmeno + ': ' + text<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return reknu<br><br>
+                    
+                    &nbsp;&nbsp;def pozdrav(self):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return self.rekni('Ahoj, jsem ' + self.jmeno)<br><br>
+                    
+                    frantisek = Clovek('František')<br>
+                    frantisek.rekni('ptakopysk')<br>
+                    frantisek.pozdrav()
+                </div>
+            </div>
+
+            <li>dědičnost a překrývání</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka dědičnosti objektů.</h6>
+                <div class="w3-code">
+                    class Rvoun(Clovek):<br>
+                    &nbsp;&nbsp;def rekni(self, text):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;reknu = self.jmeno + ': ' + text.upper()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return reknu<br><br>
+                    
+                    petr = Rvoun('Petr')<br>
+                    petr.pozdrav()
+                </div>
+            </div>
+        </ul>
+
+        <li>tichá pošta</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vytvořte program, který vypíše ve formě scénáře hru na tichou poštu, tzn. bude pro jednotlivé lidi vypisovat tutéž zprávu. Zohledněte při výpisu použití správné třídy pro zadaný charakter lidí. Lidé i jejich typy charakteru jsou uložené ve slovníku níže. Jednotlivé výpisy budou na výstup dávány v abecedním pořadí jmen ze slovníku. Charaktery využijte z předchozích úkolů a jeden nový vytvořte: <em>normální</em> přečte text tak, jak je v originálu; <em>řvoun</em> přečte text velkými písmeny; <em>tichošlápek</em> přečte text malými písmeny.</h6>
+            <div class="w3-code">
+                zprava = 'Klíče leží zapomenuté na stole...'<br>
+                seznam = {'Anička': 'normální', 'Petr': 'tichošlápek', 'Marie': 'normální', 'Boženka': 'řvoun', 'Tereza': 'řvoun', 'Marek': 'tichošlápek', 'Josef': 'tichošlápek', 'Damián': 'řvoun', 'Magdaléna': 'řvoun', 'Běla': 'normální', 'Bohumír': 'řvoun', 'Martin': 'tichošlápek', 'Benedikt': 'normální', 'Bohouš': 'řvoun'}
+            </div>
+        </div>
+    </ul>
+</div>
+
+
 <div class="w3-content w3-container w3-padding-12" id="6">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">6. cvičení (3.11.2022)</h3>

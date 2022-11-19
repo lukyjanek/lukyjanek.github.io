@@ -278,6 +278,113 @@
 
 
 <!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="9">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">9. cvičení (24.11.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">9. cvičení (24.11.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>procvičování objektového programování na příkladu spojového seznamu (aka vlak složený ze dvou objektů: <code>mašina</code> a <code>vagon</code></li>
+        <ul>            
+            <li>definice objektů:</li>
+            <ul>
+                <li>vlak má jednu mašinu a 0 až N vagonů</li>
+                <li>mašina ví jen co je za ní za vagon (nebo že za ní žádný vagon není)</li>
+                <li>vagon ví, co veze, kolik toho veze, a který vagon je za ním (nebo že za ním žádný vagon není)</li>
+                <li>(vagon by mohl vědět i který vagon je před ním; to by pak byl obousměrný spojový seznam, to si volitelně můžete zkusit taky -- je víc práce ho udržovat, protože se musí opravovat dvakrát tolik odkazů, ale některé operace se s ním dělají o trochu pohodlněji)</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Vytvořte si definice tříd <code>Masina</code> a <code>Vagon</code> podle popisu výše.</h6>
+                <p>U každé třídy stačí když vyrobíte metodu <code>__init__()</code> která nastaví příslušné datové položky (ale pokud chcete, udělejte si i další metody). Níže je nástin.</p>
+                <div class="w3-code">
+                    class Masina:<br>
+                    &nbsp;&nbsp;def __init__(self, vagon_za_mnou=None):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;self.dalsi = vagon_za_mnou<br><br>
+
+                    class Vagon:<br>
+                    &nbsp;&nbsp;def __init__(self, naklad="brambory", mnozstvi=0, za_mnou=None):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                  </div>
+            </div>
+            
+            <li>vytvoření objektů:</li>
+            <ul>
+                <li>vagon může vézt například uhlí, dřevo, papír, krávy, zrní, nebo cokoli jiného</li>
+                <li>množství dané komodity můžete chápat jako číslo bez zřejmého rozměru; pro krávy má asi smysl mluvit o jejich počtu, pro zrní spíš o tunách</li>
+            </ul>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Vyrobte si jeden vlak (<em>Oranžový Expres</em>), který bude mít aspoň 5 vagonků vezoucích různý náklad.</h6>
+                <p>Nepoužívejte žádné listy, v nějaké proměnné si udržujte pouze mašinu, a přes tu pak budete přistupovat k vagonům (můžete samozřejmě použít nějaké dočasné proměnné při vytváření vlaku, ale ty berme skutečně jako dočasné).</p>
+                <div class="w3-code">
+                    masina = Masina()<br>
+                    masina.dalsi = Vagon()<br>
+                    masina.dalsi.dalsi = Vagon('uhlí')<br>
+                    masina.dalsi.dalsi.dalsi = Vagon('koťátka', 3)<br>
+                    ...
+                  </div>
+            </div>
+            <ul>
+                <li>tímto nám vznikl takzvaný seznam "s hlavou", tedy se speciálním prvkem (mašinou), který vždy existuje a odkazuje na první skutečný prvek seznamu (první vagon); seznamy s hlavou jsou výhodné, snadněji se s nimi pracuje, neboť nemusíte tak složitě ošetřovat speciální případy jako přidání prvního vagonu, přidání vagonu na začátek, odebrání prvního vagonu (tedy prvku)</li>
+            </ul>
+
+            <li>vytvoření metod:</li>
+            <ol>
+                <p><em class="w3-small">obecný komentář: pro každý bod níže vytvořte na mašině novou metodu, pokud možno parametrizovatelnou, tj. výchozí hodnota metody <code>pridej_na_zacatek</code> může být přidat vagon vezoucí 30 ptakopysků, ale mělo by být možné pomocí parametrů přidat i vagon vezoucí něco jiného; metoda teoreticky buď vytvořit vagon dle zadání, ale lepší asi je, pokud ta metoda dostane už vytvořený vagon jako parametr, to se vám bude hodit v některých cvičeních (rada: pro přehlednost je vhodné, pokud každá metoda bude vypisovat, co dělá)</em></p>
+                <li>upravte objekty vagónů tak, aby člověk mohl udělat prostě <code>print(vagon)</code> a Python by místo něčeho jako <code>__main__.Vagon object at 0x7fab3d588358</code> vypsal třeba něco jako <code>Vagon vezouci drevo v mnozstvi 30</code>; (toho lze snadno dosáhnout předefinováním metody <code>class.__str__(self)</code> kterou Python používá pro přetypování objektu daného typu na string (takže ta metoda musí vracet string))</li>
+                <li>přidejte metodu, která na začátek vlaku (hned za mašinu) vagon vezoucí 30 ptakopysků</li>
+                <li>přidejte metodu, která na konec vlaku (za poslední vagon) vagon vezoucí 50 bublin</li>
+                <li>přidejte metodu, která vypíše počet vagonů, které mašina veze; součástí ať je též True/False parametr (defaultně False), zda má při průchodu přes vagony mašina vypisovat všechny vezené vagony</li>
+                <li>přidejte metodu, která vypíše všechny vagony, které vezou náklad v množství alespoň 10</li>
+                <li>přidejte metodu, která vypíše celkové množství jednotlivých typů nákladu</li>
+                <li>přidejte metodu, která vypíše vagon s největším množstvím nákladu</li>
+                <li>přidejte metodu, která odebere vagon s největším množstvím nákladu</li>
+                <li>přidejte metodu, která za vagon s největším nákladem připojí nový vagon obsahující 2 policisty</li>
+                <li>přidejte metodu, která za vagon s policisty připojí nový vagon se zlatem</li>
+                <li>přidejte metodu, která najde vagon s požadovanou komoditou a změní její množství</li>
+                <li>přidejte metodu, která najde vagon s uhlím, a pokud existuje - sníží jeho množství na polovinu (spotřebuje se mašinou), a pokud neexistuje - vypíše, že mašina nemá palivo</li>
+                <li>přidejte metodu, která najde vagon s požadovanou komoditou, a pokud existuje - odebere tento vagon, a pokud neexistuje - vypíše, že mašina takový vagon nemá</li>
+            </ol>
+        </ul>
+
+        <li>importy balíčků, funcí a tříd</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka importu nainstalované knihovny <code>random</code>, vlastní vytvořené třídy <code>Masina</code> a funkce <code>pricti_sedm</code>.</h6>
+            <div class="w3-code">
+                import random<br>
+                import Masina<br>
+                from nazev_skriptu import pricti_sedm<br>
+            </div>
+            <p>Import vlastních tříd a funkcí předpokládá, že je soubor s implementovanou třídou v témže adresáři jako spouštěný skript. Pokud není, je potřeba přidat cestu k souboru do <code>sys.path</code>, a teprve pak importovat. Lze zadat jak jako relativní, tak absolutní cestu.</p>
+            <div class="w3-code">
+                # (a) import z adresáře, který je ve stejné složce jako spouštěný skript<br>
+                from nazev_slozky.nazev_skriptu_se_tridou_Masina import Masina<br><br>
+                # (b) import po přidání cesty do sys.paths<br>
+                import sys<br>
+                sys.path.append('cesta_do_adresare_se_souborem_se_tridou_Masina')<br>
+                from nazev_skriptu_se_tridou_Masina import Masina<br>
+            </div>
+            <p>Varianta (a) nelze použít, pokud by byl skript s importovanou třídou <code>Masina</code> v nějakém nadřazeném adresáři (cesta by k němu vedla relativně <code>../</code>). při importu v Pythonu totiž nelze použít <code>from ../.nazev_skriptu_se_tridou_Masina import Masina</code> (ani jinou alternativu); musí se použít varianta (b). Varianta (b) lze použít jak v případě, kdy je skript s importovanou třídou v nadřazeném, tak podřazeném adresáři. Nejprve je však nutné přidat cestu do daného adresáře do <code>sys.path</code> a teprve potom importovat potřebnou třídu.</p>
+            <p><strong>Důležité upozornění</strong> : nazev_skriptu_se_tridou_Masina se zadává bez koncovky <code>.py</code> a smí obsahovat jen písmena, čísla, podtržítka; mezery, spojovníky/pomlčky ani diakritiku při importu Python nezpracuje.</p>
+        </div>
+    </ul>
+</div>
+
+
+<div class="w3-content w3-container w3-padding-12" id="8">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">8. cvičení (17.11.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">1. cvičení (17.11.2022)</h3>
+    <hr style="border: 2px solid rgba(255, 166, 0, 0.87)">
+
+    <div class="w3-panel w3-card w3-light-grey w3-center">
+        <h3>Zrušeno</h3>
+        státní svátek: Den boje za svobodu a demokracii a Mezinárodní den studentstva
+    </div>
+
+</div>
+
+
 <div class="w3-content w3-container w3-padding-12" id="7">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">7. cvičení (10.11.2022)</h3>

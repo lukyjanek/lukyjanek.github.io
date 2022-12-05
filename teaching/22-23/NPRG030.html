@@ -278,6 +278,155 @@
 
 
 <!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="11">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">11. cvičení (08.12.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">11. cvičení (08.12.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>ošetření chyb, tzv. výjimky: Za zachycení stojí jen ty chyby, u kterých víme, jak chceme, aby program pokračoval. Mnohdy je pro nás výhodnější při chybě program prostě ukončit místo zachycování výjimek.</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka použití <code>try-except</code> k ošetření chyby. Jaká výjimka by se měla zachytit u proměnné <code>c</code>?</h6>
+            <div class="w3-code">
+                try:<br>
+                &nbsp;&nbsp;a = int('pokus')<br>
+                except ValueError:<br>
+                &nbsp;&nbsp;print('Toto není číslo.')<br><br>
+
+                try:<br>
+                &nbsp;&nbsp;b = 7 / 0<br>
+                except ZeroDivisionError:<br>
+                &nbsp;&nbsp;print('Dělíte nulou.')<br><br>
+
+                try:<br>
+                &nbsp;&nbsp;c = len(9)<br>
+                except:<br>
+                &nbsp;&nbsp;print('??')<br><br>
+            </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Rozšířené použití <code>try-except</code> k ošetření chyby a dalšímu běhu programu.</h6>
+            <div class="w3-code">
+                a = 7<br>
+                b = 0<br>
+                try:<br>
+                &nbsp;&nbsp;c = a / b<br>
+                &nbsp;&nbsp;print(c)<br>
+                except ZeroDivisionError:<br>
+                &nbsp;&nbsp;print('Dělí se nulou!')<br>
+                else:<br>
+                &nbsp;&nbsp;print('Tohle se provede, pokud chyba nenastane.')<br>
+                finally:<br>
+                &nbsp;&nbsp;print('Tohle se provede vždycky.')<br>
+            </div>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vlastní vyvolání výjimky pomocí <code>raise</code> místo <cod€>return</cod>.</h6>
+            <div class="w3-code">
+                def obsah_ctverce(strana):<br>
+                &nbsp;&nbsp;if strana > 0:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return strana ** 2<br>
+                &nbsp;&nbsp;else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;raise ValueError(f'Strana musí být kladná, číslo {strana} kladné není!')<br>
+            </div>
+        </div>
+
+        <li>instalace externích knihoven</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka instalace externí knihovny (v příkazové řádce / terminálu).</h6>
+            <div class="w3-code">
+                # dlouhá notace<br>
+                python3 -m pip install __jmeno_knihovny__<br>
+                python3 -m pip install regex<br><br>
+
+                # kratší notace<br>
+                pip3 install __jmeno_knihovny__<br>
+                pip3 install networkx==2.4<br>
+            </div>
+            <p><strong>Správce:</strong> Když je knihovna instalována přímo do systému, je potřeba k instalaci externí knihovny povolení správce. Ve Windows by mělo stačit spustit příkazový řádek <em>jako správce</em>; v Unix by mělo stačit použít před výše uvedený příkaz klíčové slůvko <code>sudo</code>.</p>
+            <p><strong>Verze:</strong> Pokud chcete nainstalovat konkrétní verzi nějaké knihovny, stačí bezprostředně za název připojit <code>==číslo_verze</code></p>
+        </div>
+
+        <li>virtuální prostředí</li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Ukázka práce s virtuálním prostředím. Windows a Unix vytváří prostředí jinak (nelze zaměňovat).</h6>
+            <div class="w3-code">
+                # jedna možnost - Unix i Windows<br>
+                python3 -m venv __nazev_adresare__<br>
+                python3 -m venv py3env<br><br>
+
+                # druhá možnost - Unix<br>
+                virtualenv -p python3 __nazev_adresare__<br>
+                virtualenv -p python3 py3env<br><br>
+
+                # aktivace - Unix<br>
+                source py3env/bin/activate<br><br>
+
+                # aktivace - Windows<br>
+                .\py3env\Scripts\activate<br><br>
+
+                # deaktivace<br>
+                deactivate<br><br>
+
+                # instalace knihoven bez aktivace<br>
+                py3env/bin/python3 -m pip install __jmeno_knihovny__<br>
+            </div>
+        </div>
+
+        <li>testování</li>
+        <ul>
+            <li>způsob, jak automaticky ověřit, zda vytvořený program funguje dle požadavků; vytváří se program, který testuje funkci jiného programu</li>
+            <li>automatické testy se mohou zkpouštět opakovaně, např. při úpravě programu dává smysl ověřit si, že úprava programu nezpůsobila problémy ve funkčnosti</li>
+            <li>v Pythonu existuje knihovna <code>unittest</code>, díky níž lze vytvářet testy, ale na ovládání je mnohem snazší knihovna <code>pytest</code>, která se však musí doinstalovat</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <div class="w3-code">
+                    python3 -m pip install pytest<br>
+                </div>
+            </div>
+
+            <li>tvorba testů má své konvence: vytvářené testy by měly mít předponu <code>test_</code>, k vyhodnocení se používá klíčové slovo <code>assert</code>, testy se většinou udržují ve speciálním samostatném souboru</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka jednoduchého testu uloženého v souboru <code>test_secteni.py</code>.</h6>
+                <div class="w3-code">
+                    def secti(a, b):<br>
+                    &nbsp;&nbsp;return a + b<br><br>
+
+                    def test_secti():<br>
+                    &nbsp;&nbsp;assert secti(1, 2) == 3<br>
+                </div>
+                <p>Příkaz <code>assert</code> ve výjimkách funguje v podstatě jako:</p>
+                <div class="w3-code">
+                    if not (a == b):<br>
+                    &nbsp;&nbsp;raise AssertionError('Test selhal!')<br>
+                </div>
+                <p>Test se spouští z příkazového řádku pomocí:</p>
+                <div class="w3-code">
+                    python -m pytest -v test_secteni.py<br>
+                </div>
+                <p>Vytvořený test je tzv. <em>pozitivní test</em>, lze ale vytvořit i <em>negativní testy</em>:</p>
+                <div class="w3-code">
+                    def test_secti2():<br>
+                    &nbsp;&nbsp;assert secti(1, 2) != 4<br>
+                </div>
+                <h6>Rozdělte soubor <code>test_secteni.py</code> na dva soubory tak, aby byly testy a kód programu zvlášť, a přitom šlo kód programu testovat.</h6>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Ukázka parametrického testu.</h6>
+                <div class="w3-code">
+                    import pytest<br><br>
+                    @pytest.mark.parametrize(<br>
+                    &nbsp;&nbsp;['a', 'b'], [(10, 1), (11, 2), (12, 3), (13, 4), (14, 5)]<br>
+                    )<br>
+                    def test_secti(a, b):<br>
+                    &nbsp;&nbsp;assert secti(a, b) == a + b<br>
+                </div>
+            </div>
+        </ul>
+    </ul>
+</div>
+
+
 <div class="w3-content w3-container w3-padding-12" id="10">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">10. cvičení (01.12.2022)</h3>
@@ -289,9 +438,9 @@
         <ul>
             <li>knihovna <code>os</code> [<a href="https://docs.python.org/3/library/os.html" target="_blank">dokumentace</a>]</li>
             <div class="w3-panel w3-card w3-light-grey">
-                <h6>SPOJOVAČKA: Ukázka použití knihovny <code>os</code>.</h6> <!-- Spojte příkaz s jeho správným komentářem.</h6> -->
+                <h6>Ukázka použití knihovny <code>os</code>.</h6> <!-- Spojte příkaz s jeho správným komentářem.</h6> -->
                 
-                <div class="w3-code">
+                <!-- <div class="w3-code">
                     import os<br><br>
                     os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí velikost souboru v Bytech<br>
                     os.chdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? vrátí seznam adresářů a souborů<br>
@@ -301,9 +450,9 @@
                     os.path.exists('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? změna aktuálního pracovního adresáře<br>
                     os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# ? zjistí, zda adresář/soubor existuje<br>
                     os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ? smaže zadaný adresář<br>
-                </div>
+                </div> -->
                
-                <!-- <div class="w3-code">
+                <div class="w3-code">
                     import os<br><br>
                     os.getcwd()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# vrátí aktuální pracovní adresář<br>
                     os.chdir('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# změna aktuálního pracovního adresáře<br>
@@ -313,7 +462,7 @@
                     os.path.exists('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# zjistí, zda adresář/soubor existuje<br>
                     os.path.getsize('...')&nbsp;&nbsp;&nbsp;&nbsp;# vrátí velikost souboru v Bytech<br>
                     os.remove('...')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# smaže zadaný soubor<br>
-                </div> -->
+                </div>
             </div>
 
             <li>knihovna <code>sys</code> [<a href="https://docs.python.org/3/library/sys.html" target="_blank">dokumentace</a>]: <code>sys.exit()</code>, <code>sys.argv</code>, <code>sys.path</code>, <code>sys.stdin</code></li>

@@ -285,7 +285,7 @@
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>ošetření chyb, tzv. výjimky: Za zachycení stojí jen ty chyby, u kterých víme, jak chceme, aby program pokračoval. Mnohdy je pro nás výhodnější při chybě program prostě ukončit místo zachycování výjimek.</li>
+        <li>ošetření chyb, tzv. výjimky: Za zachycení stojí jen ty chyby, u kterých víme, jak chceme, aby program pokračoval. Mnohdy je pro nás výhodnější při chybě program prostě ukončit místo zachycování výjimek. [<a href="https://docs.python.org/3/library/exceptions.html" target="_blank">seznam built-in výjimek</a>]</li>
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Ukázka použití <code>try-except</code> k ošetření chyby. Jaká výjimka by se měla zachytit u proměnné <code>c</code>?</h6>
             <div class="w3-code">
@@ -402,7 +402,7 @@
                 </div>
                 <p>Test se spouští z příkazového řádku pomocí:</p>
                 <div class="w3-code">
-                    python -m pytest -v test_secteni.py<br>
+                    python3 -m pytest -v test_secteni.py<br>
                 </div>
                 <p>Vytvořený test je tzv. <em>pozitivní test</em>, lze ale vytvořit i <em>negativní testy</em>:</p>
                 <div class="w3-code">

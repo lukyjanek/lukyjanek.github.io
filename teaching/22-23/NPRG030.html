@@ -278,6 +278,117 @@
 
 
 <!-- Container (Cvičení) -->
+<div class="w3-content w3-container w3-padding-12" id="12">
+
+    <h3 class="w3-center w3-xxlarge w3-hide-small">12. cvičení (15.12.2022)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">12. cvičení (15.12.2022)</h3>
+    <hr style="border: 2px solid orange">
+
+    <ul>
+        <li>knihovny pro tvorbu grafického uživatelského rozhranní (GUI):</li>
+        <ul>
+            <li><code>pyqt</code> [<a href="https://www.qt.io/" target="_blank">web</a>] [<a href="https://naucse.python.cz/lessons/intro/pyqt/" target="_blank">ukázka/dokumentace</a>]</li>
+
+            <li><code>tkinter</code> [<a href="http://tkinter.programujte.com/" target="_blank">dokumentace</a>] a [<a href="https://realpython.com/python-gui-tkinter/" target="_blank">ukázka</a>]</li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Tvorba GUI pomocí <code>tkinter</code>. Vytvořme jednoduchý formulář.</h6>
+                <div class="w3-code">
+                    import tkinter as tk<br><br>
+
+                    window = tk.Tk()<br>
+                    window.option_add('*Font', 'Arial 9')<br><br>
+
+                    jmeno_label = tk.Label(window, text='Jméno:').pack()<br>
+                    jmeno_entry = tk.Entry(window)<br>
+                    jmeno_entry.pack()<br><br>
+
+                    prijmeni_label = tk.Label(window, text='Příjmení:').pack()<br>
+                    prijmeni_entry = tk.Entry(window)<br>
+                    prijmeni_entry.pack()<br><br>
+
+                    telefon_label = tk.Label(window, text='Telefon:').pack()<br>
+                    telefon_entry = tk.Entry(window)<br>
+                    telefon_entry.insert(0, '+420')<br>
+                    telefon_entry.pack()<br><br>
+
+                    def odesli():<br>
+                    &nbsp;&nbsp;print(jmeno_entry.get())<br>
+                    &nbsp;&nbsp;print(prijmeni_entry.get())<br>
+                    &nbsp;&nbsp;print(telefon_entry.get())<br><br>
+
+                    tk.Button(window, text=u"Odešli", width=10, command=odesli).pack()<br><br>
+
+                    tk.mainloop()<br>
+                </div>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Naformátujte formulář tak, abyste použili Grid, přidejte políčka.</h6>
+                <div class="w3-code">
+                    import tkinter as tk<br><br>
+
+                    window = tk.Tk()<br>
+                    window.option_add('*Font', 'Arial 9')<br><br>
+
+                    window.columnconfigure([0, 1, 2, 3], minsize=100)<br><br>
+
+                    jmeno_label = tk.Label(window, text='Jméno:').grid(row=0)<br>
+                    jmeno_entry = tk.Entry(window)<br>
+                    jmeno_entry.grid(row=0, column=1)<br><br>
+
+                    prijmeni_label = tk.Label(window, text='Příjmení:').grid(row=0, column=2)<br>
+                    prijmeni_entry = tk.Entry(window)<br>
+                    prijmeni_entry.grid(row=0, column=3)<br><br>
+
+                    telefon_label = tk.Label(window, text='Telefon:').grid(row=1)<br>
+                    telefon_entry = tk.Entry(window)<br>
+                    telefon_entry.insert(0, '+420')<br>
+                    telefon_entry.grid(row=1, column=1)<br><br>
+
+                    def odesli():<br>
+                    &nbsp;&nbsp;print(jmeno_entry.get())<br>
+                    &nbsp;&nbsp;print(prijmeni_entry.get())<br>
+                    &nbsp;&nbsp;print(telefon_entry.get())<br><br>
+
+                    tk.Button(window, text=u"Odešli", width=10, command=odesli).grid(row=3, column=3)<br><br>
+
+                    tk.mainloop()<br>
+                </div>
+            </div>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Přidejte políčko <em>název souboru</em> a uložte do zadaného souboru vložená data v <code>.json</code> formátu.</h6>
+            </div>
+
+            <li><code>pygame</code> pro tvorbu jednoduchých her (viz [<a href="https://realpython.com/pygame-a-primer/" taget="_blank">ukázka</a>] a [<a href="https://www.pygame.org/wiki/GettingStarted" taget="_blank">dokumentace</a>])</li>
+        </ul>
+
+        <br>
+        <li>užitečné knihovny pro zpracování dat:</li>
+        <ul>
+            <li><code>numpy</code> - pro zpracování číselných dat [<a href="https://numpy.org/" target="_blank">web</a>] [<a href="https://numpy.org/doc/stable/user/quickstart.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>regex</code> - pro zpracování textu (modernější než původní knihovna <code>re</code>) [<a href="https://pypi.org/project/regex/" target="_blank">web</a>] [<a href="https://www.regular-expressions.info/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>networkx</code> - pro zpracování grafů [<a href="https://networkx.org/" target="_blank">web</a>] [<a href="https://networkx.org/documentation/stable/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>pandas</code> - pro zpracování libovolných datových zdrojů, převážně tabulkového/csv/xlsx formátu [<a href="https://pandas.pydata.org/" target="_blank">web</a>] [<a href="https://naucse.python.cz/lessons/intro/pandas/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>matplotlib</code> a <code>seaborn</code> - pro vizualizaci dat v podobě grafů a diagramů [<a href="https://matplotlib.org/" target="_blank">web</a>] [<a href="https://matplotlib.org/stable/tutorials/index" target="_blank">ukázka/dokumentace</a>] a [<a href="https://seaborn.pydata.org/" target="_blank">web</a>] [<a href="https://seaborn.pydata.org/tutorial.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>request</code> - pro zpracování webu [<a href="https://docs.python-requests.org/en/latest/" target="_blank">web</a>] [<a href="https://docs.python-requests.org/en/latest/user/quickstart/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>flask</code> a <code>django</code> - pro vytváření webu [<a href="https://flask.palletsprojects.com/en/2.0.x/#" target="_blank">web</a>] [<a href="https://flask.palletsprojects.com/en/2.0.x/quickstart/" target="_blank">ukázka/dokumentace</a>] a [<a href="https://www.djangoproject.com/" target="_blank">web</a>] [<a href="https://docs.djangoproject.com/en/4.0/" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>sklearn</code> - pro zpracování strojového učení [<a href="https://scikit-learn.org/stable/" target="_blank">web</a>] [<a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">ukázka/dokumentace</a>]</li>
+            <li><code>tensorflow</code> - pro zpracování neuronových sítí [<a href="https://www.tensorflow.org/" target="_blank">web</a>] [<a href="https://www.tensorflow.org/overview" target="_blank">ukázka/dokumentace</a>]</li>
+        </ul>
+        
+        <br>
+        <li>DOPORUČENÍ: <em>Při učení a používání různých knihoven se poohlédněte po dostupných cheat sheetech; např. <a href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf" target="_blank">cheat sheet</a> pro <code>pandas</code> nebo <a href="https://cdn.activestate.com/wp-content/uploads/2021/02/Tkinter-CheatSheet.pdf" target="_blank">cheat sheet</a> pro <code>tkinter</code>. Existují jich spousty, a to v různých verzích.</em></li>
+        
+        <br>
+        <li>doporučené kurzy:</li>
+        <ul>
+            <li><em>Introduction to Language Technologies</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl125" target="_blank">NPFL125</a>]</li>
+            <li><em>Machine Learningn for Greenhorns</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl129/2223-winter" target="_blank">NPFL129</a>]</li>
+            <li><em>Deep Learning</em> [<a href="https://ufal.mff.cuni.cz/courses/npfl114/2122-summer" target="_blank">NPFL114</a>]</li>
+        </ul>
+    </ul>
+</div>
+
+
 <div class="w3-content w3-container w3-padding-12" id="11">
 
     <h3 class="w3-center w3-xxlarge w3-hide-small">11. cvičení (08.12.2022)</h3>

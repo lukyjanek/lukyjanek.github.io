@@ -1147,14 +1147,18 @@
 </div> -->
 
 
-<!-- <div class="w3-content w3-container w3-padding-12" id="2">
+<div class="w3-content w3-container w3-padding-12" id="2">
 
-    <h3 class="w3-center w3-xxlarge w3-hide-small">2. cvičení (06.10.2022)</h3>
-    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">2. cvičení (06.10.2022)</h3>
+    <h3 class="w3-center w3-xxlarge w3-hide-small">2. cvičení (10.10.2023)</h3>
+    <h3 class="w3-center w3-xlarge w3-hide-large w3-hide-medium">2. cvičení (10.10.2023)</h3>
     <hr style="border: 2px solid orange">
 
     <ul>
-        <li>funkce nad čísly: <code>round()</code></li>
+        <li>funkce pro čísla: <code>round()</code></li>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h6>Vytvořte program, který se zeptá na výšku v metrech a váhu v kg a na výstupu vrátí hodnotu BMI (hmotnost ÷ výška^2). Výsledek ať program vypíše zaokrouhlený na jedno desetinné místo.</h6>
+        </div>
+
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Ověřte, co se stane s číslem, pokud na něj použijeme funkci <code>round()</code> jako v příkladu níže.</h6>
             <div class="w3-code">
@@ -1162,11 +1166,8 @@
               print(round(cislo, 2))<br>
             </div>
         </div>
-        <div class="w3-panel w3-card w3-light-grey">
-            <h6>Vytvořte program, který se zeptá na výšku v metrech a váhu v kg a na výstupu vrátí hodnotu BMI (hmotnost ÷ výška^2). Výsledek ať program vypíše zaokrouhlený na jedno desetinné místo.</h6>
-        </div>
-
-        <li>stringové metody: <code>str.split()</code>, <code>str.strip()</code>, <code>str.lstrip()</code>, <code>str.rstrip()</code>, <code>str.startswith()</code>, <code>str.endswith()</code>, <code>str.replace()</code>, <code>str.join()</code>, <code>str.format()</code>, <code>str.lower()</code>, <code>str.upper()</code></li>
+        
+        <li>metody nad stringy: <code>str.split()</code>, <code>str.strip()</code>, <code>str.lstrip()</code>, <code>str.rstrip()</code>, <code>str.startswith()</code>, <code>str.endswith()</code>, <code>str.replace()</code>, <code>str.join()</code>, <code>str.format()</code>, <code>str.lower()</code>, <code>str.upper()</code></li>
         <div class="w3-panel w3-card w3-light-grey">
             <h6>K čemu slouží uvedené stringové metody? Jaký bude výstup jednotlivých příkladů níže?</h6>
             <div class="w3-code">
@@ -1193,7 +1194,11 @@
             </div>
         </div>
         
-        <li>datová struktura <code>list()</code>: <code>list[:]</code>, <code>list.index()</code>, <code>list.append()</code>, <code>list.insert()</code>, <code>list.pop()</code>, <code>list.count()</code>, <code>list.reverse()</code>, <code>list.remove()</code></li>
+        <li>datová struktura <code>list()</code>:</li>
+        <ul>
+            <li>metody nad <code>list</code>: <code>list[:]</code>, <code>list.index()</code>, <code>list.append()</code>, <code>list.insert()</code>, <code>list.pop()</code>, <code>list.count()</code>, <code>list.reverse()</code>, <code>list.remove()</code></li>
+            <li>funkce související s <code>list</code>: <code>len()</code>, <code>sorted()</code>, <code>min()</code>, <code>max()</code>, <code>range()</code></li>
+        </ul>
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Jak bude pole vypadat po aplikovaná následujících metod? Co jednotlivé metody dělají?</h6>
             <div class="w3-code">
@@ -1212,23 +1217,22 @@
             </div>
         </div>
 
-        <li>funkce související s <code>list</code>: <code>len()</code>, <code>sorted()</code>, <code>min()</code>, <code>max()</code>, <code>range()</code></li>
-
-        <li>logické operátory: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>not</code>, <code>and</code>, <code>or</code>, <code>in</code>, <code>all()</code>, <code>any()</code></li>
-        <div class="w3-panel w3-card w3-light-grey">
-            <h6>Popište výstupy funkcí <code>all()</code> a <code>any()</code>.</h6>
-            <div class="w3-code">
-              print(all([True, True, False])<br>
-              print(all([True, True, True])<br>
-              print(all([False, False, False])<br><br>
-
-              print(any([True, True, False])<br>
-              print(any([True, True, True])<br>
-              print(any([False, False, False])<br>
-            </div>
-        </div>
-
         <li>podmínky: <code>if - elif - else</code></li>
+        <ul>
+            <li>logické operátory: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>not</code>, <code>and</code>, <code>or</code>, <code>in</code>, <code>all()</code>, <code>any()</code></li>
+            <div class="w3-panel w3-card w3-light-grey">
+                <h6>Popište výstupy funkcí <code>all()</code> a <code>any()</code>.</h6>
+                <div class="w3-code">
+                print(all([True, True, False])<br>
+                print(all([True, True, True])<br>
+                print(all([False, False, False])<br><br>
+
+                print(any([True, True, False])<br>
+                print(any([True, True, True])<br>
+                print(any([False, False, False])<br>
+                </div>
+            </div>
+        </ul>
         <div class="w3-panel w3-card w3-light-grey">
             <h6>Jaký bude výstup následujícího bloku kódu a proč?.</h6>
             <div class="w3-code">
@@ -1262,7 +1266,7 @@
             <h6>Vytvořte program za použití <code>while</code>, který bude na vstupu požadovat zadávání čísel od 1-20, a to dokud bude zadané číslo sudé. Jakmile dostane program na vstup liché číslo, vypíše: (i) že se jedná o číslo liché, (ii) minimální a (iii) maximální zadaná čísla, (iv) počty zadaných čísel z intervalů 1-5, 6-10, 11-15, 16-20.</h6>
         </div>
     </ul>
-</div> -->
+</div>
 
 
 <div class="w3-content w3-container w3-padding-12" id="1">

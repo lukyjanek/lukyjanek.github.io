@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import {profile} from '../../settings'
 import SocialIcons from './SocialIcons.astro'
-import ProfilePictures from '@/assets/profile_pictures.jpg'
+import ProfilePictures from '/public/images/avatar-2022.jpg'
 import { getCollection } from 'astro:content'
 import { template } from '@/settings'
 
@@ -11,7 +11,7 @@ const isBlogPopulated = await getCollection('blog').then(collection => collectio
 const {fullName, title} = profile
 ---
 <aside
-	class='px-4 pt-4 h-screen w-[20rem] bg-base-200 text-base-content flex flex-col'
+	class='pt-4 h-screen w-[20rem] bg-base-200 text-base-content flex flex-col'
 >
 	<div class='flex flex-col my-8 justify-between h-full'>
 		<div>
@@ -21,10 +21,10 @@ const {fullName, title} = profile
 					src={ProfilePictures}
 					alt={`Profile picture of ${fullName}`}
 				/>
-				<h1 class="text-lg font-black mt-8 hidden lg:block">{title} <span>{fullName}</span></h1>
+				<h1 class="text-lg font-black mt-3 lg:block">{title} <span>{fullName}</span></h1>
 			</div>
-			<div class='mx-4 mt-16'>
-				<ul class='space-y-4 menu grow shrink menu-md overflow-y-auto'>
+			<div class='mx-4 mt-6'>
+				<ul class='space-y-2 menu grow shrink menu-md overflow-y-auto'>
 					<li>
                         <a href={`${template.base}/`} class='text-lg'>Home</a>
 					</li>
@@ -32,20 +32,31 @@ const {fullName, title} = profile
                         <a href={`${template.base}/research`} class='text-lg'>Research</a>
 					</li>
 					<li>
-                        <a href={`${template.base}/papers`} class='text-lg'>Papers</a>
+                        <a href={`${template.base}/datatools`} class='text-lg'>Data & Tools</a>
+					</li>
+					<li>
+                        <a href={`${template.base}/papers`} class='text-lg'>Publications</a>
+					</li>
+					<li>
+                        <a href={`${template.base}/presentations`} class='text-lg'>Presentations</a>
+					</li>
+					<li>
+                        <a href={`${template.base}/teaching`} class='text-lg'>Teaching (academy)</a>
 					</li>
 					<li>
                         <a href={`${template.base}/cv`} class='text-lg'>CV</a>
                     </li>
+				<!--
                     {isBlogPopulated &&
 					<li>
                         <a href={`${template.base}/blog/1`} class='text-lg'>Blog</a>
-</li>
+					</li>
                     }
+				-->
 				</ul>
 			</div>
 		</div>
-		<div class='mx-4'>
+		<div class='px-6'>
 			<SocialIcons/>
 		</div>
 	</div>

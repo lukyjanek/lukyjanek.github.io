@@ -1,0 +1,83 @@
+---
+import { highlightAuthor } from "@/lib/utils";
+import { template } from "@/settings";
+
+const { paper } = Astro.props;
+---
+
+<div class="card bg-base-200 shadow-sm hover:shadow-md transition-all h-full">
+  <div class="card-body p-6">
+    
+    {/* ZMĚNA ZDE: */}
+    {/* 1. justify-between: Roztáhne prvky od sebe (jeden vlevo, druhý vpravo) */}
+    {/* 2. items-start: Zarovná je nahoru (aby rok nepadal dolů, když je název na 3 řádky) */}
+    {/* 3. gap-4: Minimální mezera mezi názvem a rokem */}
+    <div class="flex justify-between items-start gap-4 text-xs font-semibold uppercase tracking-wide opacity-70 mb-2">
+      
+      {/* Název časopisu: Bere veškeré zbylé místo, ale respektuje mezeru pro rok */}
+      <span class="badge badge-outline border-base-content/20 h-auto py-1 text-left whitespace-normal leading-tight block">
+        {paper.journal}
+      </span>
+      
+      {/* Rok: shrink-0 zajistí, že se nikdy nezmenší a zůstane vpravo */}
+      <span class="badge badge-ghost whitespace-nowrap shrink-0">
+        {paper.time}
+      </span>
+
+    </div>
+
+    <h3 class="card-title text-xl mb-1">
+      <a 
+        href={template.base + paper.link} 
+        class="hover:text-primary transition-colors focus:text-primary outline-none" 
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {paper.title}
+      </a>
+    </h3>
+
+    <p class="text-base text-base-content/80 mb-0">
+      <span set:html={highlightAuthor(paper.authors)} />
+    </p>
+
+    <div class="mt-4 border-t border-base-content/10 pt-2">
+      <details class="group w-full">
+        <summary class="list-none flex flex-wrap items-center justify-between gap-4 cursor-pointer py-2 px-1 rounded hover:bg-base-300/50 transition-colors">
+          <span class="text-sm font-medium text-base-content/60 group-hover:text-primary flex items-center gap-2 select-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 transition-transform duration-200 group-open:rotate-180">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+            Citation (APA)
+          </span>
+
+          <div class="flex gap-2">
+            {paper.url && (
+              <a 
+                href={paper.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-sm btn-ghost text-base-content/70 hover:bg-base-300"
+              >
+                DOI / Link
+              </a>
+            )}
+            <a 
+              href={template.base + paper.link} 
+              target="_blank"
+              rel="noopener noreferrer" 
+              class="btn btn-sm btn-primary shadow-sm"
+            >
+              PDF
+            </a>
+          </div>
+        </summary>
+
+        <div class="mt-2 p-3 bg-base-300 rounded-lg text-sm font-mono text-base-content/70 select-all animate-in fade-in slide-in-from-top-1 duration-200">
+          <span class="font-bold text-base-content/40 select-none mr-2">APA:</span>
+          <span set:html={highlightAuthor(paper.apacite)} />
+        </div>
+      </details>
+    </div>
+  </div>
+</div>

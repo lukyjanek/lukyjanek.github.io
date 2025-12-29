@@ -24,7 +24,9 @@ export interface Publication {
   authors: string;
   journal: string;
   time: string;
+  apacite: string;
   link?: string;
+  url?: string;
   abstract?: string;
 }
 

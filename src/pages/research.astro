@@ -8,39 +8,25 @@ import {RESEARCH_ICONS} from "@/data/researchIcons";
 const { research_areas } = profile;
 ---
 
-<Layout title="Research | Dr. Marie Curie">
+<Layout title="Research | Lukáš Kyjánek">
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">Research Statement</h1>
 
     <div class="mb-12">
       <p class="text-lg mb-6">
-        My research focuses on groundbreaking investigations into radioactivity and the discovery of new radioactive elements. Through meticulous experimental techniques and innovative methodologies, I aim to advance our understanding of radioactive phenomena and their applications in both physics and chemistry.
+        My research focuses on the intersection of computational linguistics and formal morphology.
+        By combining quantitative methods with theoretical insights, I aim to model the complex architecture of inflectional and derivational morphology and word formation, specifically on Czech.
       </p>
       <p class="text-lg mb-6">
-        This interdisciplinary approach has led to significant discoveries, including the isolation of polonium and radium, contributing to the foundation of modern nuclear physics and radiochemistry.
+        This interdisciplinary approach allows me to investigate morphological predictability of forms, paradigms and/or meanings, contributing to both the development of robust NLP resources and a deeper understanding of linguistic theory.
       </p>
     </div>
 
-    <h2 class="text-2xl font-bold mb-6">Research Areas</h2>
-    <div class="grid gap-8 mb-12">
+    <h2 class="text-2xl font-bold mb-2">Research Areas</h2>
+    <div class="grid gap-2">
       {
         research_areas.map((area) => (
-          <div class="flex gap-6 items-start">
-            <BetterIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                class="size-6 stroke-accent"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d={RESEARCH_ICONS[area.field as keyof typeof RESEARCH_ICONS]?.path || RESEARCH_ICONS['computer-science'].path}
-                />
-              </svg>
-            </BetterIcon>
+          <div class="flex gap-3 items-start">
             <div>
               <h3 class="text-xl font-semibold mb-2">{area.title}</h3>
               <p class="text-base">{area.description}</p>
@@ -52,18 +38,65 @@ const { research_areas } = profile;
 
     <List listTitle="Current Projects" listItems={[
       {
-        title: "Radioactivity Studies",
-        description: "Investigation of radioactive properties in uranium minerals and isolation of new radioactive elements."
+        title: "Computational approach to predictability in morphology: Evidence from Czech",
+        type: "Dissertation Thesis (in progress)",
+        link: "",
+        linkname: "",
+        description: "I study morphological paradigms and their coherence and predictability in morphology on the basis of Czech language data."
+      },
+    ]} />
+
+    <List listTitle="Past Projects" listItems={[
+      {
+        title: "A data-based approach to competition in word-formation",
+        type: "START Research Programme, CUNI (principal investigator, 2021-2023)",
+        link: "https://ufal.mff.cuni.cz/node/2248",
+        linkname: "Project website",
+        description: "I researched competition in word-formation processes and means employed to express the meanings of diminutiveness and gender marking in seven European languages."
       },
       {
-        title: "Measurement Techniques",
-        description: "Development of precise methods for measuring radioactive emissions and their properties."
+        title: "Word-formation structure of Czech words",
+        type: "GAČR Grant, CUNI (team member, 2019-2021)",
+        link: "http://ufal.mff.cuni.cz/node/1838",
+        linkname: "Project website",
+        description: "I focused on linguistic research into the word-formation structure of Czech words. We used specialised language resources, tools and large corpora of Czech."
+      },
+      {
+        title: "Derivational networks for multiple languages",
+        type: "GAUK Grant, CUNI (team member, 2019-2021)",
+        link: "https://ufal.mff.cuni.cz/node/2277",
+        linkname: "Project website",
+        description: "With Jonáš Vidra and Tomáš Musil, we focused on developing derivational networks for multiple languages using machine learning and cross-linguistical transfer of knowledge."
+      },
+      {
+        title: "Harmonised collection Universal Derivations",
+        type: "Master Thesis (2020)",
+        link: "",
+        linkname: "",
+        description: "I created a collection of harmonised lexical networks capturing word-formation in a cross-linguistically consistent annotation scheme for many languages."
+      },
+      {
+        title: "Semantic labels into DeriNet",
+        type: "Student's Faculty Grant, CUNI (principal investigator, 2019)",
+        link: "https://github.com/Vidraj/derinet/tree/master/data/annotations/cs/2018_09_ssjc_semantic",
+        linkname: "GitHub repository",
+        description: "I carried out first experiments with labelling of derivational meanings in Czech DeriNet using machine learning methods. As a result, the database contains five labels since its version 2.0."
+      },
+      {
+        title: "Foreign words recognition",
+        type: "Student's Faculty Grant, CUNI (principal investigator, 2018)",
+        link: "https://github.com/lukyjanek/foreign-words-recognition",
+        linkname: "GitHub repository",
+        description: "I developed a rule-based tool for the recognition of borrowed/foreign/loan words in the Czech language. Used rules are based on the study of so far published linguistic papers."
+      },
+      {
+        title: "Mutual Intelligibility between West-Slavic languages",
+        type: "Bachelor Thesis (2017)",
+        link: "",
+        linkname: "",
+        description: "With Jiří Haviger, we focused on measurement of mutual intelligibility between West-Slavic languages, especially using conditional entropy and methods from the field of dialectometry."
       }
     ]} />
 
-    <h2 class="text-2xl font-bold mb-6">Research Impact</h2>
-    <p class="text-lg mb-6">
-      My research has opened new frontiers in radioactivity studies, leading to practical applications in both scientific research and medical treatments. The discoveries have revolutionized our understanding of atomic structure and radioactive decay processes.
-    </p>
   </div>
 </Layout>

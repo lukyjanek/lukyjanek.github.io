@@ -1,0 +1,25 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import DataGrid from "@/components/ui/DataGrid.astro";
+import ToolsGrid from "@/components/ui/ToolsGrid.astro";
+
+import { resources, tools } from '../data/cv'
+
+---
+
+<Layout title="Resources | Lukáš Kyjánek">
+  <div class="max-w-5xl mx-auto">
+    <DataGrid 
+      title="Data & Corpora" 
+      items={resources} 
+    />
+
+    <hr class="border-base-300 my-12" />
+
+    <ToolsGrid 
+      title="Tools & Software" 
+      items={tools} 
+    />
+
+  </div>
+</Layout>

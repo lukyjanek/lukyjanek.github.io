@@ -9,6 +9,8 @@ import Bluesky from '@/assets/social-icons/bluesky.svg'
 import Inspire from '@/assets/social-icons/inspire.svg'
 import Arxiv from '@/assets/social-icons/arxiv.svg'
 import Orcid from '@/assets/social-icons/orcid.svg'
+import ResearchGate from '@/assets/social-icons/researchgate.svg'
+import Academia from '@/assets/social-icons/academia.svg'
 
 import { social } from '@/settings'
 
@@ -86,6 +88,18 @@ const calculatedContainerSize = activeSocial.length <= 5 ? 'size-12' : activeSoc
 	  {social.orcid !== '' &&
 		<a href={social.orcid} target="_blank" class={`${calculatedContainerSize} inline-flex items-center justify-center rounded-xl hover:bg-primary/20 transition-all duration-300`}>
 			<Orcid class={calculatedIconSize} fill="currentColor" />
+		</a>
+	}
+	<!-- researchgate -->
+	  {social.researchgate !== '' &&
+		<a href={social.researchgate} target="_blank" class={`${calculatedContainerSize} inline-flex items-center justify-center rounded-xl hover:bg-primary/20 transition-all duration-300`}>
+			<ResearchGate class={calculatedIconSize} fill="currentColor" />
+		</a>
+	}
+	<!-- academia -->
+	  {social.academia !== '' &&
+		<a href={social.academia} target="_blank" class={`${calculatedContainerSize} inline-flex items-center justify-center rounded-xl hover:bg-primary/20 transition-all duration-300`}>
+			<Academia class={calculatedIconSize} fill="currentColor" />
 		</a>
 	}
 </div>

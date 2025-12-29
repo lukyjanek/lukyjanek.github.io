@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import { presentations } from '@/data/cv'
+import PresentationsGrid from '@/components/ui/PresentationsGrid.astro'
+
+---
+
+<Layout title="Presentations | Lukáš Kyjánek">
+	<section class='py-12 border-b'>
+		<PresentationsGrid gridTitle='Presentations' gridItems={presentations} />
+	</section>
+</Layout>

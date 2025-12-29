@@ -30,6 +30,20 @@ const { elements } = Astro.props
           set:html={highlightAuthor(element.authors as string)}
         />
       </p>
+      {element.url && (
+      <p class='text-base mb-2'>
+        <span class='font-medium'>URL:</span>{' '}
+        <a
+          href={element.url as string}
+          class='hover:text-accent transition-colors duration-200'
+          target='_blank'
+          >
+            <span
+              set:html={highlightAuthor(element.url as string)}
+            />
+        </a>
+      </p>
+      )}
       <p class='text-sm mb-3'>
         <span class='italic'>{element.journal}</span> •{' '}
         {element.time}

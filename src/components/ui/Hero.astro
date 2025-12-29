@@ -8,12 +8,14 @@ const {fullName, title, institute, profilePicture} = Astro.props
 ---
 <div class='flex-1'>
   <h1 class='text-4xl font-bold mb-4'>
-    Welcome! I'm <span class='text-secondary'>{fullName}</span>
+    Hello! I'm <strong>{fullName}</strong>
   </h1>
   <p class='text-xl text-gray-600 mb-4'>{title}{institute ? ` at ${institute}` : ''}</p>
   <p class='text-lg mb-6'>
-    Brief impactful description of your research focus and academic mission.
-    Highlight your key contributions and areas of expertise.
+    My academic journey bridges the gap between computational approaches and formal theory in morphology and word formation. Starting in 2025, I am a PhD candidate at the <a target="_blank" href="http://www.llf.cnrs.fr/">Laboratoire de Linguistique Formelle</a> (<a target="_blank" href="https://u-paris.fr/"><strong>Université Paris Cité</strong></a>).
+    <!-- Previously, I focused on Computational Linguistics at <a target="_blank" href="https://cuni.cz/"><strong>Charles University</strong></a> (<a target="_blank" href="http://ufal.mff.cuni.cz/">UFAL</a>, 2020-2023  as a PhD candidate, and 2017-2020 as a Master student). -->
+    <!-- My connection to the Parisian research community was established during an internship in 2022 (Jan-Aug) under the supervision of <a target="_blank" href="http://www.llf.cnrs.fr/fr/Gens/Bonami">Olivier Bonami</a>, which ultimately led to my current research focus. -->
+    My work extends beyond research; besides my scientific focus, I am a passionate educator and teacher.
   </p>
   <div class='flex gap-4'>
     <SocialIcons />

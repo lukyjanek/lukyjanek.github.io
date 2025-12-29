@@ -1,0 +1,73 @@
+---
+interface Props {
+  gridTitle: string;
+  gridItems: {
+    title: string;
+    time: string,
+    location: string,
+    image: string;
+    link: string;
+    language?: string;
+  }[];
+  columns?: 1 | 2 | 3 | 4;
+}
+
+const {gridTitle, gridItems, columns = 2} = Astro.props;
+
+const columnClasses = {
+  1: "grid-cols-1",
+  2: "grid-cols-1 md:grid-cols-2",
+  3: "grid-cols-1 md:grid-cols-3 lg:grid-cols-3",
+  4: "grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+};
+const gridClass = columnClasses[columns] || columnClasses[2];
+
+---
+<h2 class="text-3xl font-bold mb-8">{gridTitle}</h2>
+
+<div class={`grid ${gridClass} gap-6 mb-6`}>
+  {
+    gridItems.map((item) => (
+      <div class="bg-base-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        {item.image && (
+          <div class="px-6 pt-6">
+            <a href={item.link} target="_blank" class="block aspect-video overflow-hidden">
+                <img 
+                  src={item.image}
+                  alt={`Title slide of ${item.title}`}
+                  class="object-cover object-top hover:scale-105 transition-transform duration-300"
+                />
+            </a>
+          </div>
+        )}
+
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold mb-2">
+              <a href={item.link} target="_blank" class="hover:underline">{item.title}</a>
+          </h3>
+          {(item.time || item.location) && (
+            <div class="flex flex-wrap gap-y-1 gap-x-4 text-sm opacity-70 mb-3">
+              {item.time && (
+                <span class="flex items-center gap-1">
+                  📅 {item.time}
+                </span>
+              )}
+              {item.location && (
+                <br>
+                <span class="flex items-center gap-1">
+                   📍 {item.location}
+                </span>
+              )}
+              {item.language && (
+                <br>
+                <span class="flex items-center gap-1">
+                   🌐 {item.language}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>

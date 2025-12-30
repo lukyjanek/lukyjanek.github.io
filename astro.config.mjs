@@ -10,6 +10,6 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
     integrations: [react(), tailwind(), sitemap()],
-    site: "lukyjanek.github.io",
+    site: "https://lukyjanek.github.io",
     base: "/",
 });

@@ -293,7 +293,7 @@ export const presentations = [
 	},
 	{
 		title: 'Theoretical stances shape empirical generalisations on inflection vs. derivation',
-		time: '2015',
+		time: '2025',
 		location: 'WF Theories and LU in WF, Košice (SK)',
 		image: '/presentations/2025-kosice-theoretical-stances-shape-empirical-generalisations-on-inflection-vs-derivation.jpg',
 		link: '/presentations/2025-kosice-theoretical-stances-shape-empirical-generalisations-on-inflection-vs-derivation.pdf',
@@ -462,7 +462,7 @@ export const resources = [
     repository: "http://hdl.handle.net/11234/1-3247"
   },
   {
-    name: "Universal Segmantations (UniSegments)",
+    name: "Universal Segmentations (UniSegments)",
     description: "UniSegments is a multilingual data resource for morphological segmentation. It provides harmonized segmentations for 32 languages, inspired by the Universal Dependencies and Universal Derivations scheme.",
     url: "https://ufal.mff.cuni.cz/universal-segmentations",
     versions: ["v1.0"],
@@ -486,9 +486,9 @@ export const resources = [
 
 export const tools = [
   {
-    name: "Verb Classification",
-    description: "Classification of Czech verbs into classes and groups based on their morphological properties.",
-    github: "https://github.com/lukyjanek/czech-verb-classes"
+    name: "Inflectional Classifier",
+    description: "Classification of Czech nouns, adjectives and verbs into inflectional classes and groups based on their morphological properties.",
+    github: "https://github.com/lukyjanek/czech-inflectional-classifier"
   },
   {
     name: "Phonetic Transcription",
@@ -500,9 +500,14 @@ export const tools = [
     description: "Recognition of foreign words in the Czech language using machine learning approaches.",
     github: "https://github.com/lukyjanek/foreign-words-recognition"
   },
+//   {
+//     name: "Annotation Tool for Phonetics",
+//     description: "Tool for manual annotation of phonetic transription of Czech. It reads phonetic transcription (Transcription-To-Speech) and native speaker can easily validate it.",
+//     github: "https://github.com/lukyjanek/"
+//   },
   {
-    name: "Annotation Tool",
-    description: "Tool for manual annotation of linguistic data, designed to support specific rooted-tree annotation schemas.",
+    name: "Annotation Tool for Morphology",
+    description: "Tool for manual annotation of morphological data, designed to support specific rooted-tree annotation schemas for derivational morphology.",
     github: "https://github.com/lukyjanek/uder-annotation-interface"
   }
 ];

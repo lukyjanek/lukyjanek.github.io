@@ -482,6 +482,13 @@ export const resources = [
     versions: ["v1.0"],
     repository: "http://hdl.handle.net/11234/1-3247"
   },
+  {
+    name: "Semantic annotation of noun/verb conversion in Czech",
+    description: "A dataset of 2,058 noun/verb conversion pairs along with related formations (word-formation paradigms) provided with linguistic features, including semantic categories.",
+    url: "http://hdl.handle.net/11234/1-5142",
+    versions: ["v1.0"],
+    repository: "http://hdl.handle.net/11234/1-5142"
+  },
 ];
 
 export const tools = [

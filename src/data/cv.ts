@@ -488,7 +488,7 @@ export const resources = [
     url: "http://hdl.handle.net/11234/1-5142",
     versions: ["v1.0"],
     repository: "http://hdl.handle.net/11234/1-5142"
-  },
+  }
 ];
 
 export const tools = [
